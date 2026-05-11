@@ -1,0 +1,79 @@
+Test: Urinalysis (Urine Analysis Test)
+
+Purpose:
+Urinalysis is a diagnostic test that evaluates the physical, chemical, and microscopic properties of urine. It is used to detect infections, kidney disorders, liver disease, diabetes, and urinary tract abnormalities.
+
+------------------------------------------------------------
+
+Parameters:
+
+1. Physical (Visual Examination)
+- Color
+- Clarity (Clear / Cloudy / Turbid)
+
+2. Chemical (Dipstick Test)
+- pH (Acidity)
+- Protein
+- Glucose
+- Ketones
+- Bilirubin
+- Blood (Hemoglobin)
+- Nitrites
+- Leukocyte Esterase
+- Specific Gravity
+
+3. Microscopic Examination
+- Red Blood Cells (RBC)
+- White Blood Cells (WBC)
+- Epithelial Cells
+- Bacteria
+- Yeast / Parasites
+- Crystals
+- Urinary Casts
+
+------------------------------------------------------------
+
+Normal Findings (General):
+
+Color: Pale yellow to amber  
+Clarity: Clear  
+pH: 4.5 – 8.0  
+Protein: Negative / Trace  
+Glucose: Negative  
+Ketones: Negative  
+Bilirubin: Negative  
+Blood: Negative  
+Nitrites: Negative  
+Leukocyte Esterase: Negative  
+Specific Gravity: 1.005 – 1.030  
+
+RBC: 0–2 / HPF  
+WBC: 0–5 / HPF  
+Epithelial Cells: Few  
+Bacteria: None  
+Crystals: None or occasional  
+Casts: None or few hyaline casts  
+
+------------------------------------------------------------
+
+Interpretation:
+
+- Protein present ? kidney disease, hypertension, diabetes
+- Glucose present ? diabetes mellitus
+- Ketones present ? diabetic ketoacidosis, starvation
+- Blood present ? infection, stones, trauma, cancer
+- Nitrites positive ? bacterial urinary tract infection (UTI)
+- Leukocyte esterase positive ? infection/inflammation
+- High WBC ? infection or inflammation
+- High RBC ? hematuria (kidney/urinary tract disease)
+- Crystals ? possible kidney stones
+- Casts ? kidney pathology (type-dependent)
+- Cloudy urine ? infection or contamination
+
+------------------------------------------------------------
+
+Note:
+- Results must always be correlated with symptoms
+- Sample contamination can affect epithelial cells and bacteria count
+- Reference ranges may vary by laboratory
+- Dipstick tests are screening tools; microscopy confirms diagnosis

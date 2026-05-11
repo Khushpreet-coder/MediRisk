@@ -1,0 +1,86 @@
+Test: Liver Function Tests (LFTs)
+
+Purpose:
+Liver Function Tests are blood tests used to evaluate liver health and function. They help detect liver disease, inflammation, damage, and how well the liver processes proteins, enzymes, and waste products.
+
+LFTs are used to:
+- Detect liver inflammation or injury
+- Diagnose conditions such as hepatitis, fatty liver disease, and cirrhosis
+- Monitor progression of chronic liver diseases
+- Assess bile duct function
+- Evaluate liver response to medications or toxins
+- Check alcohol-related liver damage
+
+Key Parameters:
+- Alanine Transaminase (ALT / SGPT)
+- Aspartate Transaminase (AST / SGOT)
+- Alkaline Phosphatase (ALP)
+- Gamma-Glutamyl Transferase (GGT)
+- Bilirubin (Total and Direct)
+- Albumin
+- Total Protein
+- Lactate Dehydrogenase (LDH)
+- Prothrombin Time (PT)
+
+Parameter Details:
+
+ALT (Alanine Transaminase / SGPT):
+Elevated in liver cell damage such as hepatitis or fatty liver disease.
+
+AST (Aspartate Transaminase / SGOT):
+Elevated in liver injury and sometimes muscle damage.
+
+ALP (Alkaline Phosphatase):
+Associated with bile duct function; high levels may indicate obstruction or liver/bone disorders.
+
+GGT (Gamma-Glutamyl Transferase):
+Elevated in bile duct disease and alcohol-related liver damage.
+
+Bilirubin:
+Waste product from red blood cell breakdown.
+High levels may cause jaundice and indicate liver dysfunction or bile duct blockage.
+
+Albumin:
+Protein made by liver.
+Low levels suggest chronic liver disease or reduced liver function.
+
+Total Protein:
+Measures albumin + globulin.
+Low levels may indicate liver dysfunction or malnutrition.
+
+LDH (Lactate Dehydrogenase):
+Elevated levels may indicate tissue or liver damage.
+
+Prothrombin Time (PT):
+Measures blood clotting time.
+Longer time may indicate impaired liver function.
+
+Normal Ranges (Adults - Approx):
+
+ALT: 0–45 IU/L  
+AST: 0–35 IU/L  
+ALP: 30–120 U/L  
+GGT: 0–30 IU/L  
+Bilirubin: 2–17 µmol/L (or 0.1–1.2 mg/dL)  
+Albumin: 3.5–5.0 g/dL (or 40–60 g/L)  
+Total Protein: 6.3–7.9 g/dL  
+LDH: 122–222 U/L  
+Prothrombin Time (PT): 9.4–12.5 seconds  
+
+Interpretation:
+- High ALT/AST ? liver inflammation or injury
+- High ALP/GGT ? bile duct problems or alcohol-related liver disease
+- High bilirubin ? jaundice or liver dysfunction
+- Low albumin ? chronic liver disease
+- Prolonged PT ? reduced liver clotting ability
+- High LDH ? tissue or liver damage
+
+Preparation:
+- Some tests require fasting (8–12 hours)
+- Inform doctor about medications before test
+- Hydration helps blood draw process
+
+Note:
+- Normal ranges vary by laboratory
+- Results should always be interpreted using lab-specific reference values
+- LFT results are often combined with imaging for accurate diagnosis

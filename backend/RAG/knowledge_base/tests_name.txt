@@ -1,0 +1,8 @@
+Complete Blood Count (CBC)
+Lipid Profile
+Liver Function Test (LFT)
+Kidney Function Test (KFT)
+Thyroid Profile
+Blood Glucose Test
+Vitamin Profile
+Urinalysis

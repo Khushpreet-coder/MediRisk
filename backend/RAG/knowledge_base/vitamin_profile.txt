@@ -1,0 +1,84 @@
+Test: Vitamin Profile (Common Vitamin Tests)
+
+Purpose:
+Vitamin profile evaluates essential vitamin levels in blood to detect deficiencies or excess affecting energy metabolism, nerves, immunity, blood formation, and bone health.
+
+Parameters:
+- Vitamin D (25-Hydroxy Vitamin D)
+- Vitamin B12 (Cobalamin)
+- Folate (Vitamin B9)
+- Vitamin A (Retinol)
+- Vitamin E (Tocopherol)
+
+------------------------------------------------------------
+
+Vitamin D (25-Hydroxy Vitamin D)
+
+Normal Ranges:
+- < 20 ng/mL ? Deficiency
+- 20–30 ng/mL ? Insufficiency
+- 30–100 ng/mL ? Normal
+- > 100 ng/mL ? Toxicity risk
+
+Interpretation:
+- Low ? bone weakness, fatigue, low immunity
+- High ? calcium imbalance, toxicity risk
+
+------------------------------------------------------------
+
+Vitamin B12 (Cobalamin)
+
+Normal Ranges:
+- < 200 pg/mL ? Deficiency
+- 200–900 pg/mL ? Normal
+- > 900 pg/mL ? Possible excess
+
+Interpretation:
+- Low ? anemia, neuropathy, fatigue, memory issues
+- High ? supplementation or liver/metabolic issues
+
+------------------------------------------------------------
+
+Folate (Vitamin B9)
+
+Normal Ranges:
+- < 2 ng/mL ? Deficiency
+- 2–20 ng/mL ? Normal
+- > 20 ng/mL ? High
+
+Interpretation:
+- Low ? megaloblastic anemia, weakness, poor DNA synthesis
+- High ? supplementation, may mask B12 deficiency
+
+------------------------------------------------------------
+
+Vitamin A (Retinol)
+
+Normal Ranges:
+- 20–60 µg/dL ? Normal
+- < 20 µg/dL ? Deficiency
+- > 60 µg/dL ? Toxicity risk
+
+Interpretation:
+- Low ? night blindness, dry skin, immune weakness
+- High ? liver toxicity, headache, nausea
+
+------------------------------------------------------------
+
+Vitamin E (Tocopherol)
+
+Normal Ranges:
+- 5–20 mg/L ? Normal
+- < 5 mg/L ? Deficiency
+- > 20 mg/L ? Excess intake
+
+Interpretation:
+- Low ? nerve damage, muscle weakness
+- High ? bleeding risk (affects clotting balance)
+
+------------------------------------------------------------
+
+Note:
+- Reference ranges may vary across laboratories
+- Vitamins are often tested individually rather than as a single panel
+- Deficiencies often overlap with anemia, fatigue, and neurological symptoms

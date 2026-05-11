@@ -1,0 +1,40 @@
+Test: Thyroid Function Tests (TFT)
+
+Description:
+Thyroid function tests evaluate how well the thyroid gland is working. The thyroid regulates metabolism, energy production, and multiple body functions through hormone secretion. These tests help diagnose conditions such as hypothyroidism, hyperthyroidism, thyroiditis, Graves’ disease, and Hashimoto’s disease. Thyroid evaluation is done using blood tests that measure hormone and antibody levels.
+
+Parameters:
+TSH (Thyroid Stimulating Hormone)
+T3 (Triiodothyronine)
+Free T3
+T4 (Thyroxine)
+Free T4
+TPO Antibodies (Thyroid Peroxidase Antibodies)
+TG (Thyroglobulin)
+TGAb (Thyroglobulin Antibodies)
+TSI (Thyroid Stimulating Immunoglobulin)
+
+Normal Ranges (Adults - Approx):
+TSH: 0.4–4.0 mIU/L
+T3 (Total): 80–200 ng/dL
+Free T3: 2.3–4.2 pg/mL
+T4 (Total): 5.0–12.0 µg/dL
+Free T4: 0.8–1.8 ng/dL
+TPO Antibodies: <35 IU/mL
+TGAb: <20 IU/mL
+TSI: <1.3 index
+
+Interpretation:
+High TSH ? Hypothyroidism
+Low TSH ? Hyperthyroidism
+High T3/T4 ? Hyperthyroidism
+Low T3/T4 ? Hypothyroidism
+Positive TPO/TG antibodies ? Autoimmune thyroid disease (Hashimoto’s or Graves’)
+Abnormal TSI ? Graves’ disease
+
+Note:
+TSH is primary screening marker
+Free T3/T4 are more accurate than total values
+Antibodies indicate autoimmune disease
+Ranges may vary by lab
+Medications, stress, and timing can affect results
