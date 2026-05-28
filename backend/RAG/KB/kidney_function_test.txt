@@ -1,0 +1,85 @@
+TEST: Kidney Function Tests (KFT / RFT)
+PURPOSE: Evaluates how well the kidneys filter waste and maintain fluid and electrolyte balance. Used to detect kidney disease, monitor diabetes or hypertension, and assess kidney damage.
+
+---
+
+PARAMETER: Serum Creatinine
+TEST: Kidney Function Tests (KFT)
+Unit: mg/dL
+Meaning: Creatinine is a waste product of muscle metabolism filtered out by the kidneys. Elevated serum creatinine indicates reduced kidney filtering ability.
+Normal Range (Female): 0.6–1.1 mg/dL
+Normal Range (Male): 0.7–1.3 mg/dL
+Low Interpretation: Low creatinine may be seen in low muscle mass, malnutrition, or pregnancy.
+High Interpretation: High creatinine suggests kidney dysfunction, acute kidney injury, dehydration, or chronic kidney disease.
+
+---
+
+PARAMETER: Creatinine Clearance
+TEST: Kidney Function Tests (KFT)
+Unit: mL/min
+Meaning: Measures how efficiently the kidneys clear creatinine from the blood per minute. Provides an estimate of kidney filtering rate.
+Normal Range (Female): 88–128 mL/min
+Normal Range (Male): 97–137 mL/min
+Low Interpretation: Low creatinine clearance indicates impaired kidney filtering and possible chronic kidney disease.
+High Interpretation: High values may reflect high muscle turnover or high protein diet; generally not concerning.
+Note: Measured using 24-hour urine collection and serum creatinine together.
+
+---
+
+PARAMETER: GFR / eGFR (Glomerular Filtration Rate)
+TEST: Kidney Function Tests (KFT)
+Unit: mL/min/1.73 m²
+Meaning: GFR is the most important indicator of overall kidney health. It estimates how much blood the kidneys filter per minute per body surface area.
+Normal Range: > 90 mL/min/1.73 m²
+Average Healthy Adult: 90–140 mL/min/1.73 m²
+Mildly Reduced: 60–89 mL/min/1.73 m²
+Moderately Reduced: 30–59 mL/min/1.73 m²
+Severely Reduced: 15–29 mL/min/1.73 m²
+Kidney Failure: < 15 mL/min/1.73 m²
+Low Interpretation: Low GFR indicates reduced kidney filtration. Values below 60 for 3+ months indicate chronic kidney disease (CKD). Below 15 may require dialysis.
+High Interpretation: High GFR is generally not a concern. May indicate hyperfiltration in early diabetes.
+
+---
+
+PARAMETER: Blood Urea Nitrogen (BUN)
+TEST: Kidney Function Tests (KFT)
+Unit: mg/dL
+Meaning: BUN measures nitrogen waste in the blood from protein breakdown. Kidneys filter urea out; elevated levels suggest impaired kidney function.
+Normal Range: 7–20 mg/dL
+Low Interpretation: Low BUN may indicate liver disease, malnutrition, or overhydration.
+High Interpretation: High BUN suggests kidney impairment, dehydration, high protein diet, or gastrointestinal bleeding.
+Note: BUN is more useful when interpreted alongside creatinine (BUN:Creatinine ratio). Normal ratio is 10:1 to 20:1.
+
+---
+
+PARAMETER: Urine Albumin
+TEST: Kidney Function Tests (KFT)
+Unit: mg/dL
+Meaning: Albumin is a protein that healthy kidneys prevent from leaking into urine. Its presence indicates kidney damage to the filtration barrier.
+Normal Range: 0–8 mg/dL
+Low Interpretation: Normal finding.
+High Interpretation: Elevated urine albumin indicates proteinuria — a sign of kidney damage, diabetes-related nephropathy, or hypertensive kidney disease.
+
+---
+
+PARAMETER: Urine Microalbumin
+TEST: Kidney Function Tests (KFT)
+Unit: mg/day
+Meaning: Detects small (micro) amounts of albumin in urine not detectable on standard urinalysis. Early marker of kidney damage.
+Normal Range: < 30 mg/day
+Early Kidney Disease: 30–300 mg/day (microalbuminuria)
+Advanced Kidney Disease: > 300 mg/day (macroalbuminuria)
+Low Interpretation: Normal finding — no kidney damage detected.
+High Interpretation: 30–300 mg/day = early kidney damage (microalbuminuria). > 300 mg/day = advanced kidney damage requiring urgent management.
+
+---
+
+PARAMETER: Albumin to Creatinine Ratio (ACR)
+TEST: Kidney Function Tests (KFT)
+Unit: mg/g
+Meaning: ACR compares the amount of albumin to creatinine in a spot urine sample. It is a convenient indicator of protein leakage from the kidneys.
+Normal Range: < 30 mg/g
+Moderately Increased: 30–300 mg/g
+Severely Increased: > 300 mg/g
+Low Interpretation: Normal kidney filtration.
+High Interpretation: Elevated ACR indicates protein leakage due to kidney disease. Used for staging chronic kidney disease alongside GFR.

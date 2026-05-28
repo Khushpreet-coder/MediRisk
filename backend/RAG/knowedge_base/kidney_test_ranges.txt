@@ -1,0 +1,44 @@
+Test: Kidney Function Tests (KFT / RFT)
+
+Purpose:
+Kidney function tests evaluate how well the kidneys are filtering waste and maintaining fluid and electrolyte balance. They help detect kidney disease, monitor chronic conditions like diabetes or hypertension, and assess kidney damage or dysfunction.
+Parameters:
+Serum Creatinine
+Creatinine Clearance
+Glomerular Filtration Rate (GFR / eGFR)
+Urine Albumin
+Urine Microalbumin
+Albumin to Creatinine Ratio (ACR)
+Blood Urea Nitrogen (BUN)
+Normal Ranges (Adults - Approx):
+Serum Creatinine:
+Female: 0.6–1.1 mg/dL
+Male: 0.7–1.3 mg/dL
+Creatinine Clearance:
+Female: 88–128 mL/min
+Male: 97–137 mL/min
+Glomerular Filtration Rate (GFR):
+Normal: > 90 mL/min/1.73 m²
+Average healthy adult: ~90–140 mL/min/1.73 m²
+Kidney failure: < 15 mL/min/1.73 m²
+Urine Albumin:
+Normal: 0–8 mg/dL
+Urine Microalbumin:
+Normal: < 30 mg/day
+Early kidney disease: 30–300 mg/day
+Advanced kidney disease: > 300 mg/day
+Albumin to Creatinine Ratio (ACR):
+Normal: < 30 mg/g
+Blood Urea Nitrogen (BUN):
+Normal: 7–20 mg/dL
+Interpretation:
+High creatinine ? possible kidney dysfunction
+Low GFR ? reduced kidney filtering ability
+High BUN ? kidney impairment or dehydration or high protein breakdown
+High albumin / microalbumin ? early kidney damage
+High ACR ? protein leakage in urine (kidney disease indicator)
+Note:
+Reference ranges may vary by lab
+Always prioritize report-provided values
+Kidney function depends on age, hydration, muscle mass, and medical conditions
+GFR is the most important overall kidney health indicator

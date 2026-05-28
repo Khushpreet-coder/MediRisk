@@ -1,0 +1,63 @@
+TEST: Vitamin Profile
+PURPOSE: Evaluates essential vitamin levels in blood to detect deficiencies or excess affecting energy metabolism, nerves, immunity, blood formation, and bone health.
+
+---
+
+PARAMETER: Vitamin D (25-Hydroxy Vitamin D)
+TEST: Vitamin Profile
+Unit: ng/mL
+Meaning: Vitamin D is essential for calcium absorption, bone health, immune function, and muscle strength. The 25-hydroxy form is the most reliable measure of overall vitamin D status.
+Normal Range: 30–100 ng/mL
+Insufficiency: 20–30 ng/mL
+Deficiency: < 20 ng/mL
+Toxicity Risk: > 100 ng/mL
+Low Interpretation: Deficiency causes bone weakness (rickets in children, osteomalacia in adults), fatigue, muscle weakness, increased infection risk, and depression. Very common in people with limited sun exposure.
+High Interpretation: Toxicity (> 100 ng/mL) can cause hypercalcemia, nausea, kidney damage, and calcification of soft tissues. Rare unless supplementing excessively.
+
+---
+
+PARAMETER: Vitamin B12 (Cobalamin)
+TEST: Vitamin Profile
+Unit: pg/mL
+Meaning: Vitamin B12 is essential for red blood cell formation, DNA synthesis, and nervous system function. It is found mainly in animal products and requires intrinsic factor for absorption.
+Normal Range: 200–900 pg/mL
+Deficiency: < 200 pg/mL
+Possible Excess: > 900 pg/mL
+Low Interpretation: Deficiency causes megaloblastic anemia, peripheral neuropathy, cognitive impairment, fatigue, and memory issues. At-risk groups include vegans, elderly, and people with malabsorption.
+High Interpretation: Elevated B12 may be caused by supplementation, liver disease, myeloproliferative disorders, or solid tumors. Should be investigated if not explained by supplements.
+
+---
+
+PARAMETER: Folate (Vitamin B9)
+TEST: Vitamin Profile
+Unit: ng/mL
+Meaning: Folate is critical for DNA synthesis, red blood cell formation, and fetal neural tube development. Measured in serum or red blood cells.
+Normal Range: 2–20 ng/mL
+Deficiency: < 2 ng/mL
+High: > 20 ng/mL
+Low Interpretation: Deficiency causes megaloblastic anemia, weakness, poor DNA synthesis, and neural tube defects in pregnancy. Often linked to poor diet or alcohol use.
+High Interpretation: Elevated folate is usually from supplementation. Very high folate can mask vitamin B12 deficiency, delaying its diagnosis and allowing neurological damage to progress.
+
+---
+
+PARAMETER: Vitamin A (Retinol)
+TEST: Vitamin Profile
+Unit: µg/dL
+Meaning: Vitamin A is essential for vision (especially night vision), immune function, skin health, and cell growth. Stored in the liver.
+Normal Range: 20–60 µg/dL
+Deficiency: < 20 µg/dL
+Toxicity Risk: > 60 µg/dL
+Low Interpretation: Deficiency causes night blindness, dry skin and eyes, increased susceptibility to infections, and delayed wound healing.
+High Interpretation: Toxicity (hypervitaminosis A) from excessive supplementation can cause liver toxicity, headache, nausea, bone pain, and birth defects in pregnancy. Fat-soluble — accumulates in body.
+
+---
+
+PARAMETER: Vitamin E (Tocopherol)
+TEST: Vitamin Profile
+Unit: mg/L
+Meaning: Vitamin E is a fat-soluble antioxidant that protects cells from oxidative damage, supports immune function, and plays a role in blood clotting balance.
+Normal Range: 5–20 mg/L
+Deficiency: < 5 mg/L
+Excess: > 20 mg/L
+Low Interpretation: Deficiency causes peripheral nerve damage (neuropathy), muscle weakness, impaired immune response, and hemolytic anemia, especially in premature infants or people with fat malabsorption.
+High Interpretation: Excess vitamin E (usually from supplements) can interfere with vitamin K activity and increase bleeding risk by inhibiting platelet aggregation. Generally safe from dietary sources alone.

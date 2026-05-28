@@ -36,9 +36,46 @@
 
 #     return final_output
 
+# def validate_data(data):
+
+#     if not data or "tests" not in data:
+#         return False
+
+#     for test in data["tests"]:
+
+#         if not isinstance(test, dict):
+#             return False
+
+#         if not test.get("test_name"):
+#             return False
+
+#         value = test.get("value")
+
+#         if value is None:
+#             return False
+
+#         try:
+#             float(value)
+#         except:
+#             return False
+
+#     return True
+
+
+# =====================================
+# VALIDATE JSON STRUCTURE
+# =====================================
+
+
 def validate_data(data):
 
-    if not data or "tests" not in data:
+    if not data:
+        return False
+
+    if "tests" not in data:
+        return False
+
+    if not isinstance(data["tests"], list):
         return False
 
     for test in data["tests"]:
@@ -47,16 +84,6 @@ def validate_data(data):
             return False
 
         if not test.get("test_name"):
-            return False
-
-        value = test.get("value")
-
-        if value is None:
-            return False
-
-        try:
-            float(value)
-        except:
             return False
 
     return True

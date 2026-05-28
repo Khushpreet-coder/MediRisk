@@ -1,0 +1,66 @@
+TEST: Lipid Profile
+PURPOSE: Measures fats (lipids) in the blood to assess cardiovascular health and risk of heart disease, heart attack, and stroke. Also used to monitor lipid-lowering treatment and identify liver disease or pancreatitis.
+
+---
+
+PARAMETER: Total Cholesterol
+TEST: Lipid Profile
+Unit: mg/dL
+Meaning: Total cholesterol is the overall measure of all cholesterol types (LDL + HDL + VLDL) in the blood. A general indicator of cardiovascular risk.
+Normal Range (Desirable): < 200 mg/dL
+Borderline High: 200–239 mg/dL
+High: ≥ 240 mg/dL
+Low Interpretation: Very low total cholesterol is uncommon and may indicate malnutrition or hyperthyroidism.
+High Interpretation: High total cholesterol increases risk of arterial plaque buildup, heart disease, and stroke. Lifestyle, diet, genetics, and medications are contributing factors.
+Preparation: Fasting for 9–12 hours recommended.
+
+---
+
+PARAMETER: LDL Cholesterol (Low-Density Lipoprotein)
+TEST: Lipid Profile
+Unit: mg/dL
+Meaning: LDL is known as "bad cholesterol." It deposits cholesterol in artery walls, causing plaque buildup and increasing cardiovascular risk.
+Normal Range (Optimal): < 100 mg/dL
+Borderline High: 100–159 mg/dL
+High: ≥ 160 mg/dL
+Low Interpretation: Low LDL is generally favorable. Very low levels may rarely be linked to hormonal or absorption issues.
+High Interpretation: High LDL significantly increases risk of coronary artery disease, heart attack, and stroke. Primary target for lipid-lowering therapy.
+
+---
+
+PARAMETER: HDL Cholesterol (High-Density Lipoprotein)
+TEST: Lipid Profile
+Unit: mg/dL
+Meaning: HDL is known as "good cholesterol." It transports excess cholesterol from blood vessels back to the liver for removal, protecting against heart disease.
+Normal Range (Protective): ≥ 60 mg/dL
+Normal Range: 40–59 mg/dL
+Low (Risk Factor): < 40 mg/dL
+Low Interpretation: Low HDL increases cardiovascular risk. Associated with obesity, smoking, physical inactivity, and metabolic syndrome.
+High Interpretation: Higher HDL is generally protective. Extremely high levels (> 100 mg/dL) may occasionally be associated with genetic disorders.
+
+---
+
+PARAMETER: Triglycerides
+TEST: Lipid Profile
+Unit: mg/dL
+Meaning: Triglycerides are fats stored from dietary intake. High levels are linked to heart disease, pancreatitis, and metabolic syndrome.
+Normal Range: < 150 mg/dL
+Borderline High: 150–199 mg/dL
+High: 200–499 mg/dL
+Very High: ≥ 500 mg/dL
+Low Interpretation: Low triglycerides are generally not a health concern.
+High Interpretation: High triglycerides increase risk of pancreatitis and cardiovascular disease. Often caused by diet high in sugar/fat, obesity, alcohol use, diabetes, or hypothyroidism.
+Preparation: Fasting for 9–12 hours required for accurate triglyceride measurement.
+
+---
+
+PARAMETER: VLDL Cholesterol (Very Low-Density Lipoprotein)
+TEST: Lipid Profile
+Unit: mg/dL
+Meaning: VLDL mainly carries triglycerides in the blood. High VLDL indicates poor fat metabolism and increases cardiovascular risk.
+Normal Range: < 30 mg/dL
+Borderline High: 31–40 mg/dL
+High: > 40 mg/dL
+Low Interpretation: Low VLDL is generally not clinically significant.
+High Interpretation: High VLDL indicates elevated triglycerides and poor lipid metabolism. Associated with metabolic syndrome, diabetes, and cardiovascular disease.
+Note: VLDL is usually calculated, not directly measured (VLDL = Triglycerides ÷ 5).

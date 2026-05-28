@@ -1,0 +1,63 @@
+Test: Kidney Function Tests (KFT) / Renal Function Tests
+
+Overview:
+Kidney function tests are urine and/or blood tests used to evaluate how well the kidneys are working. They help assess how effectively the kidneys filter waste products and maintain fluid and electrolyte balance in the body.
+
+The main filtering units of the kidneys are called glomeruli. These tiny structures filter blood and remove waste products. Kidney function tests primarily measure how efficiently the glomeruli are working.
+
+These tests are important for monitoring kidney health, especially in people with diabetes, hypertension, or symptoms of kidney disease.
+
+---
+
+Function of Kidneys:
+The kidneys are part of the urinary system and are located in the lower back on either side of the spine. Their main functions include:
+- Filtering waste products from the blood and removing them through urine
+- Maintaining fluid balance in the body
+- Regulating electrolytes (sodium, potassium, etc.)
+- Producing hormones such as:
+  - Erythropoietin (helps in red blood cell production)
+  - Hormones that regulate blood pressure
+  - Activating Vitamin D for bone and muscle health
+
+---
+
+Why Kidney Function Tests are Done:
+A healthcare provider may recommend kidney function tests for:
+
+1. Monitoring chronic conditions:
+   - Diabetes
+   - High blood pressure (hypertension)
+
+2. Diagnosing kidney-related problems
+
+3. Investigating symptoms such as:
+   - Blood in urine (hematuria)
+   - Foamy urine (possible proteinuria)
+   - Pain or burning during urination (dysuria)
+   - Frequent urination
+   - Reduced urine output (oliguria)
+   - Difficulty urinating
+   - Swelling in body (edema)
+   - Fatigue
+   - Nausea and vomiting
+   - Loss of appetite
+
+---
+
+Types of Kidney Function Tests:
+
+Blood Tests:
+- Blood Urea Nitrogen (BUN): Measures nitrogen waste in blood due to protein breakdown
+- Serum Creatinine: Measures creatinine levels produced from muscle breakdown
+- Estimated Glomerular Filtration Rate (eGFR): Estimates kidney filtration efficiency based on blood values and patient factors (age, sex, etc.)
+
+Urine Tests:
+- Urinalysis: Evaluates urine for blood, protein, acidity, specific gravity, crystals, and casts
+- Microalbuminuria: Detects small amounts of albumin (protein) in urine, indicating early kidney damage
+
+---
+
+Key Concept:
+Kidney function tests provide insight into how well the kidneys are filtering blood, removing waste, and maintaining internal balance. They are commonly used for early detection and monitoring of kidney diseases.
+
+---

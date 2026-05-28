@@ -1,0 +1,65 @@
+TEST: Blood Glucose Test
+PURPOSE: Measures the amount of glucose (sugar) in the blood. Used to screen, diagnose, and monitor diabetes (Type 1, Type 2, gestational).
+
+---
+
+PARAMETER: Fasting Blood Glucose (FBG)
+TEST: Blood Glucose Test
+Unit: mg/dL
+Meaning: Measures blood glucose level after 8–12 hours of fasting. Primary test for diagnosing diabetes.
+Normal Range: 70–99 mg/dL
+Prediabetes Range: 100–125 mg/dL
+Diabetes Threshold: ≥ 126 mg/dL
+Low Interpretation: < 70 mg/dL indicates hypoglycemia — may be caused by medications, fasting, liver disease, or hormonal disorders.
+High Interpretation: 100–125 mg/dL suggests prediabetes. ≥ 126 mg/dL on two separate tests confirms diabetes. May indicate insulin resistance or pancreatic dysfunction.
+Preparation: Patient must fast for 8–12 hours before test. Water is allowed.
+
+---
+
+PARAMETER: Random Blood Glucose (RBG)
+TEST: Blood Glucose Test
+Unit: mg/dL
+Meaning: Blood glucose measured at any time regardless of last meal. Used for quick screening.
+Normal Range: < 140 mg/dL
+Diabetes Threshold: ≥ 200 mg/dL (with symptoms)
+Low Interpretation: Values below 70 mg/dL suggest hypoglycemia.
+High Interpretation: ≥ 200 mg/dL with symptoms (thirst, urination, fatigue) indicates possible diabetes.
+Preparation: No fasting required.
+
+---
+
+PARAMETER: Postprandial Blood Glucose (PPBG)
+TEST: Blood Glucose Test
+Unit: mg/dL
+Meaning: Blood glucose measured exactly 2 hours after eating. Evaluates how well the body processes glucose after a meal.
+Normal Range: < 140 mg/dL
+Prediabetes Range: 140–199 mg/dL
+Diabetes Threshold: ≥ 200 mg/dL
+Low Interpretation: Values below 70 mg/dL may indicate reactive hypoglycemia.
+High Interpretation: 140–199 mg/dL suggests impaired glucose tolerance (prediabetes). ≥ 200 mg/dL indicates diabetes.
+Preparation: Patient eats a standard meal and blood is drawn exactly 2 hours later.
+
+---
+
+PARAMETER: Capillary Glucose Level
+TEST: Blood Glucose Test
+Unit: mg/dL
+Meaning: Glucose measured from a finger prick using a glucometer. Used for self-monitoring and quick bedside testing.
+Normal Range (Fasting): 70–99 mg/dL
+Normal Range (Post-meal): < 140 mg/dL
+Low Interpretation: < 70 mg/dL indicates hypoglycemia.
+High Interpretation: Elevated values may indicate poor glucose control or undiagnosed diabetes. Results slightly vary from venous plasma values.
+Note: Less accurate than lab-based venous plasma tests. Confirm abnormal values with lab testing.
+
+---
+
+PARAMETER: Venous Plasma Glucose
+TEST: Blood Glucose Test
+Unit: mg/dL
+Meaning: Gold standard glucose test using blood drawn from a vein and analyzed in a lab. More accurate than capillary testing.
+Normal Range (Fasting): 70–99 mg/dL
+Normal Range (Random): < 140 mg/dL
+Normal Range (2-hour Post-meal): < 140 mg/dL
+Low Interpretation: < 70 mg/dL indicates hypoglycemia.
+High Interpretation: Elevated venous plasma glucose confirms diabetes or prediabetes depending on threshold exceeded.
+Note: Used as confirmation test when capillary readings are abnormal.

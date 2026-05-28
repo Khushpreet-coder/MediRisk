@@ -1,0 +1,82 @@
+TEST: Thyroid Function Tests (TFT)
+PURPOSE: Evaluates thyroid gland function. Diagnoses hypothyroidism, hyperthyroidism, thyroiditis, Graves' disease, and Hashimoto's disease.
+
+---
+
+PARAMETER: TSH (Thyroid Stimulating Hormone)
+TEST: Thyroid Function Tests (TFT)
+Unit: mIU/L
+Meaning: TSH is produced by the pituitary gland to stimulate the thyroid to produce T3 and T4. It is the primary and most sensitive screening marker for thyroid dysfunction.
+Normal Range: 0.4–4.0 mIU/L
+Low Interpretation: Low TSH indicates hyperthyroidism — the thyroid is overactive and producing excess hormones, suppressing TSH. Causes include Graves' disease, toxic nodules, or excess thyroid hormone intake.
+High Interpretation: High TSH indicates hypothyroidism — the thyroid is underactive and not producing enough hormones, causing the pituitary to signal more. Causes include Hashimoto's disease, iodine deficiency, or thyroid surgery.
+
+---
+
+PARAMETER: T3 (Total Triiodothyronine)
+TEST: Thyroid Function Tests (TFT)
+Unit: ng/dL
+Meaning: T3 is the more active thyroid hormone. Total T3 measures both free and bound T3 in blood. It regulates metabolism, heart rate, and energy.
+Normal Range: 80–200 ng/dL
+Low Interpretation: Low T3 may indicate hypothyroidism, severe illness (euthyroid sick syndrome), or malnutrition.
+High Interpretation: High T3 suggests hyperthyroidism or T3 toxicosis. Symptoms include weight loss, palpitations, and anxiety.
+
+---
+
+PARAMETER: Free T3 (Free Triiodothyronine)
+TEST: Thyroid Function Tests (TFT)
+Unit: pg/mL
+Meaning: Free T3 measures only the unbound, biologically active fraction of T3. More accurate than total T3 as it is unaffected by binding protein levels.
+Normal Range: 2.3–4.2 pg/mL
+Low Interpretation: Low free T3 indicates hypothyroidism or severe systemic illness.
+High Interpretation: High free T3 confirms hyperthyroidism, especially in Graves' disease or T3 toxicosis.
+
+---
+
+PARAMETER: T4 (Total Thyroxine)
+TEST: Thyroid Function Tests (TFT)
+Unit: µg/dL
+Meaning: T4 is the main hormone secreted by the thyroid gland. It is converted to the more active T3 in peripheral tissues. Total T4 includes bound and unbound fractions.
+Normal Range: 5.0–12.0 µg/dL
+Low Interpretation: Low T4 indicates hypothyroidism. Common causes include Hashimoto's thyroiditis, iodine deficiency, or thyroid surgery.
+High Interpretation: High T4 suggests hyperthyroidism or excess thyroid hormone intake.
+
+---
+
+PARAMETER: Free T4 (Free Thyroxine)
+TEST: Thyroid Function Tests (TFT)
+Unit: ng/dL
+Meaning: Free T4 measures unbound, active thyroxine. It is more accurate than total T4 and is preferred for diagnosing thyroid disorders.
+Normal Range: 0.8–1.8 ng/dL
+Low Interpretation: Low free T4 confirms hypothyroidism, especially when TSH is also elevated.
+High Interpretation: High free T4 confirms hyperthyroidism, especially when TSH is suppressed.
+
+---
+
+PARAMETER: TPO Antibodies (Thyroid Peroxidase Antibodies)
+TEST: Thyroid Function Tests (TFT)
+Unit: IU/mL
+Meaning: TPO antibodies are produced when the immune system mistakenly attacks thyroid tissue. Their presence indicates autoimmune thyroid disease.
+Normal Range: < 35 IU/mL
+Low Interpretation: Negative — no autoimmune thyroid disease detected.
+High Interpretation: Elevated TPO antibodies indicate autoimmune thyroid disease — most commonly Hashimoto's thyroiditis (hypothyroid) or Graves' disease (hyperthyroid).
+
+---
+
+PARAMETER: TGAb (Thyroglobulin Antibodies)
+TEST: Thyroid Function Tests (TFT)
+Unit: IU/mL
+Meaning: TGAb are antibodies against thyroglobulin, a protein made by the thyroid. Used alongside TPO antibodies to diagnose autoimmune thyroid disease.
+Normal Range: < 20 IU/mL
+Low Interpretation: Negative — no autoimmune thyroid disease detected.
+High Interpretation: Elevated TGAb suggests Hashimoto's thyroiditis or Graves' disease. Also used to monitor thyroid cancer recurrence after thyroidectomy.
+
+---
+
+PARAMETER: TSI (Thyroid Stimulating Immunoglobulin)
+TEST: Thyroid Function Tests (TFT)
+Unit: Index
+Meaning: TSI are antibodies that mimic TSH and stimulate the thyroid to overproduce hormones. Specific marker for Graves' disease.
+Normal Range: < 1.3 index
+Low Interpretation: Negative — Graves' disease not indicated.
+High Interpretation: Elevated TSI confirms Graves' disease, an autoimmune cause of hyperthyroidism. Useful for distinguishing Graves' from other causes of hyperthyroidism.

@@ -1,0 +1,92 @@
+TEST: Liver Function Tests (LFT)
+PURPOSE: Blood tests used to evaluate liver health. Detect liver disease, inflammation, damage, bile duct function, and response to medications or toxins.
+
+---
+
+PARAMETER: ALT (Alanine Transaminase / SGPT)
+TEST: Liver Function Tests (LFT)
+Unit: IU/L
+Meaning: ALT is an enzyme found primarily in liver cells. When liver cells are damaged, ALT is released into the blood. It is the most specific marker of liver cell injury.
+Normal Range: 0–45 IU/L
+Low Interpretation: Normal or not clinically significant.
+High Interpretation: Elevated ALT indicates liver cell damage. Causes include hepatitis (viral, alcoholic, autoimmune), fatty liver disease, medication toxicity, or cirrhosis. Very high levels (> 10x normal) suggest acute hepatitis.
+
+---
+
+PARAMETER: AST (Aspartate Transaminase / SGOT)
+TEST: Liver Function Tests (LFT)
+Unit: IU/L
+Meaning: AST is found in liver, heart, and muscle cells. Less specific than ALT for liver disease but elevated in liver injury and muscle damage.
+Normal Range: 0–35 IU/L
+Low Interpretation: Normal or not clinically significant.
+High Interpretation: Elevated AST suggests liver injury or muscle disease. AST:ALT ratio > 2:1 often indicates alcoholic liver disease. Isolated high AST may also point to cardiac or skeletal muscle damage.
+
+---
+
+PARAMETER: ALP (Alkaline Phosphatase)
+TEST: Liver Function Tests (LFT)
+Unit: U/L
+Meaning: ALP is produced in the liver (bile ducts), bone, kidneys, and intestines. Elevation is associated with bile duct obstruction or liver/bone disorders.
+Normal Range: 30–120 U/L
+Low Interpretation: Low ALP may indicate hypothyroidism, anemia, or malnutrition.
+High Interpretation: High ALP suggests bile duct obstruction (cholestasis), primary biliary cholangitis, liver infiltration (cancer/abscess), or bone disorders (Paget's disease, bone metastases).
+
+---
+
+PARAMETER: GGT (Gamma-Glutamyl Transferase)
+TEST: Liver Function Tests (LFT)
+Unit: IU/L
+Meaning: GGT is a liver enzyme sensitive to bile duct disease and alcohol-related liver damage. Used alongside ALP to differentiate liver from bone causes.
+Normal Range: 0–30 IU/L
+Low Interpretation: Normal finding.
+High Interpretation: Elevated GGT strongly suggests bile duct disease, alcohol abuse, or fatty liver. If both ALP and GGT are high, liver/bile duct origin is confirmed.
+
+---
+
+PARAMETER: Bilirubin (Total)
+TEST: Liver Function Tests (LFT)
+Unit: µmol/L or mg/dL
+Meaning: Bilirubin is a yellow waste product from red blood cell breakdown processed by the liver. High levels cause jaundice (yellow skin/eyes).
+Normal Range: 2–17 µmol/L (or 0.1–1.2 mg/dL)
+Low Interpretation: Not clinically significant.
+High Interpretation: High total bilirubin indicates liver dysfunction, bile duct obstruction, or excessive red blood cell breakdown (hemolysis). Causes jaundice. Direct bilirubin elevation points to liver/bile duct disease; indirect elevation suggests hemolysis.
+
+---
+
+PARAMETER: Albumin
+TEST: Liver Function Tests (LFT)
+Unit: g/dL
+Meaning: Albumin is the primary protein made by the liver. It reflects long-term liver function and nutritional status. Low levels indicate chronic liver impairment.
+Normal Range: 3.5–5.0 g/dL
+Low Interpretation: Low albumin suggests chronic liver disease (cirrhosis), malnutrition, nephrotic syndrome, or severe infection. It is a marker of reduced liver synthetic function.
+High Interpretation: High albumin is uncommon and may indicate dehydration.
+
+---
+
+PARAMETER: Total Protein
+TEST: Liver Function Tests (LFT)
+Unit: g/dL
+Meaning: Total protein measures albumin plus globulin in blood. Reflects liver function, immune activity, and nutritional status.
+Normal Range: 6.3–7.9 g/dL
+Low Interpretation: Low total protein may indicate liver dysfunction, malnutrition, or protein-losing kidney or gut disease.
+High Interpretation: High total protein may indicate dehydration, chronic infection, or conditions that increase immunoglobulins (e.g., multiple myeloma).
+
+---
+
+PARAMETER: LDH (Lactate Dehydrogenase)
+TEST: Liver Function Tests (LFT)
+Unit: U/L
+Meaning: LDH is an enzyme found in many tissues. Elevated levels indicate tissue damage or cell breakdown, including in the liver.
+Normal Range: 122–222 U/L
+Low Interpretation: Not clinically significant.
+High Interpretation: High LDH suggests liver damage, hemolytic anemia, myocardial infarction, muscle injury, or cancer. Not specific to the liver — must be interpreted with other markers.
+
+---
+
+PARAMETER: Prothrombin Time (PT)
+TEST: Liver Function Tests (LFT)
+Unit: seconds
+Meaning: PT measures the time it takes blood to clot. The liver produces clotting factors; a prolonged PT indicates reduced liver synthetic function.
+Normal Range: 9.4–12.5 seconds
+Low Interpretation: Shorter PT is not typically significant.
+High Interpretation: Prolonged PT indicates the liver is not producing enough clotting factors. This occurs in acute liver failure, cirrhosis, or vitamin K deficiency. Critical in assessing severity of liver disease.

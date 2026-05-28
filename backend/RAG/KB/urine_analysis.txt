@@ -1,0 +1,157 @@
+TEST: Urinalysis (Urine Analysis)
+PURPOSE: Evaluates physical, chemical, and microscopic properties of urine. Used to detect infections, kidney disorders, liver disease, diabetes, and urinary tract abnormalities.
+
+---
+
+PARAMETER: Urine Color
+TEST: Urinalysis
+Unit: Visual observation
+Meaning: The color of urine reflects hydration status, diet, medications, and potential disease.
+Normal Finding: Pale yellow to amber
+Abnormal Interpretation: Colorless = overhydration. Dark yellow/orange = dehydration or bilirubin. Red/pink = blood (hematuria), beets, or certain medications. Brown/tea-colored = severe dehydration, liver disease, or myoglobinuria. Green/blue = rare dye ingestion or infection.
+
+---
+
+PARAMETER: Urine Clarity
+TEST: Urinalysis
+Unit: Visual observation
+Meaning: Clarity describes how transparent the urine appears and indicates presence of cells, crystals, or bacteria.
+Normal Finding: Clear
+Abnormal Interpretation: Cloudy or turbid urine may indicate urinary tract infection (UTI), proteinuria, pyuria (pus cells), phosphate crystals, or contamination.
+
+---
+
+PARAMETER: Urine pH
+TEST: Urinalysis
+Unit: pH scale
+Meaning: Measures the acidity or alkalinity of urine. Reflects kidney acid-base regulation and diet.
+Normal Range: 4.5–8.0
+Low Interpretation: Acidic urine (pH < 4.5) may indicate metabolic acidosis, high protein diet, or kidney stone risk (uric acid stones).
+High Interpretation: Alkaline urine (pH > 8.0) may indicate UTI (urea-splitting bacteria), renal tubular acidosis, or vegetarian diet.
+
+---
+
+PARAMETER: Urine Protein
+TEST: Urinalysis
+Unit: Qualitative (Negative / Trace / 1+ / 2+ / 3+)
+Meaning: Protein is not normally present in urine. Its detection indicates damage to kidney filtration barrier.
+Normal Finding: Negative or Trace
+Abnormal Interpretation: Protein in urine (proteinuria) suggests kidney disease, hypertension, diabetes-related nephropathy, or glomerulonephritis. Trace amounts may be transient (fever, exercise, dehydration).
+
+---
+
+PARAMETER: Urine Glucose
+TEST: Urinalysis
+Unit: Qualitative (Negative / Positive)
+Meaning: Glucose should not normally appear in urine. It spills into urine when blood glucose exceeds the renal threshold (~180 mg/dL).
+Normal Finding: Negative
+Abnormal Interpretation: Glucose in urine (glucosuria) suggests diabetes mellitus, uncontrolled blood sugar, or rarely renal glycosuria (low renal threshold without diabetes).
+
+---
+
+PARAMETER: Urine Ketones
+TEST: Urinalysis
+Unit: Qualitative (Negative / Trace / Small / Moderate / Large)
+Meaning: Ketones are produced when the body burns fat instead of glucose for energy. Normally absent in urine.
+Normal Finding: Negative
+Abnormal Interpretation: Ketones in urine indicate diabetic ketoacidosis (DKA), prolonged fasting or starvation, high-fat/low-carb diet, or vomiting. Urgent in DKA.
+
+---
+
+PARAMETER: Urine Bilirubin
+TEST: Urinalysis
+Unit: Qualitative (Negative / Positive)
+Meaning: Bilirubin is not normally found in urine. Its presence indicates a liver or bile duct problem.
+Normal Finding: Negative
+Abnormal Interpretation: Bilirubin in urine suggests hepatitis, liver disease, or bile duct obstruction. May cause dark brown urine.
+
+---
+
+PARAMETER: Urine Blood (Hemoglobin)
+TEST: Urinalysis
+Unit: Qualitative (Negative / Trace / Positive)
+Meaning: Detects blood (red blood cells or hemoglobin) in urine. Not normally present.
+Normal Finding: Negative
+Abnormal Interpretation: Blood in urine (hematuria) may indicate urinary tract infection, kidney stones, trauma, glomerulonephritis, or cancer. Must be confirmed by microscopy to distinguish RBCs from free hemoglobin.
+
+---
+
+PARAMETER: Urine Nitrites
+TEST: Urinalysis
+Unit: Qualitative (Negative / Positive)
+Meaning: Nitrites are produced by bacteria (mainly gram-negative) that convert urinary nitrates. A positive test indicates bacterial infection.
+Normal Finding: Negative
+Abnormal Interpretation: Positive nitrites strongly suggest a bacterial UTI. Most commonly caused by E. coli. Should be followed by urine culture for confirmation.
+
+---
+
+PARAMETER: Leukocyte Esterase
+TEST: Urinalysis
+Unit: Qualitative (Negative / Trace / 1+ / 2+ / 3+)
+Meaning: Leukocyte esterase is an enzyme released by white blood cells (WBCs). Its presence indicates pyuria (WBCs in urine) due to infection or inflammation.
+Normal Finding: Negative
+Abnormal Interpretation: Positive leukocyte esterase indicates UTI, urethritis, or kidney inflammation. When combined with positive nitrites, strongly confirms bacterial UTI.
+
+---
+
+PARAMETER: Specific Gravity
+TEST: Urinalysis
+Unit: No unit (ratio)
+Meaning: Specific gravity measures the concentration of solutes in urine, reflecting kidney concentrating and diluting ability.
+Normal Range: 1.005–1.030
+Low Interpretation: Low specific gravity (< 1.005) suggests overhydration or diabetes insipidus (kidneys unable to concentrate urine).
+High Interpretation: High specific gravity (> 1.030) indicates dehydration, concentrated urine, or early acute kidney injury.
+
+---
+
+PARAMETER: Urine RBC (Red Blood Cells)
+TEST: Urinalysis — Microscopic
+Unit: /HPF (per high power field)
+Meaning: RBCs in urine detected under microscope. Even a small number above normal is significant.
+Normal Range: 0–2 /HPF
+Abnormal Interpretation: > 2 RBC/HPF (hematuria) indicates kidney stones, UTI, trauma, glomerulonephritis, or urinary tract cancer.
+
+---
+
+PARAMETER: Urine WBC (White Blood Cells)
+TEST: Urinalysis — Microscopic
+Unit: /HPF (per high power field)
+Meaning: WBCs in urine indicate an inflammatory or infectious process in the urinary tract.
+Normal Range: 0–5 /HPF
+Abnormal Interpretation: > 5 WBC/HPF (pyuria) indicates UTI, kidney infection (pyelonephritis), or interstitial nephritis.
+
+---
+
+PARAMETER: Epithelial Cells
+TEST: Urinalysis — Microscopic
+Unit: Qualitative (Few / Moderate / Many)
+Meaning: A few epithelial cells from the urethra or skin are normal. Large numbers indicate sample contamination.
+Normal Finding: Few
+Abnormal Interpretation: Many epithelial cells suggest contaminated sample (especially in females). Tubular epithelial cells indicate acute kidney tubular damage.
+
+---
+
+PARAMETER: Urine Bacteria
+TEST: Urinalysis — Microscopic
+Unit: Qualitative (None / Few / Many)
+Meaning: Bacteria should not be present in properly collected midstream urine.
+Normal Finding: None
+Abnormal Interpretation: Bacteria in urine (bacteriuria) indicates UTI, especially when combined with positive nitrites and elevated WBCs. Should be followed by urine culture.
+
+---
+
+PARAMETER: Urine Crystals
+TEST: Urinalysis — Microscopic
+Unit: Qualitative (None / Occasional / Many)
+Meaning: Crystals form from mineral salts in urine. Some are normal; others indicate stone-forming conditions.
+Normal Finding: None or occasional
+Abnormal Interpretation: Calcium oxalate or uric acid crystals may indicate kidney stone risk. Struvite crystals suggest UTI. Cystine crystals indicate a rare hereditary condition. Type matters for clinical interpretation.
+
+---
+
+PARAMETER: Urinary Casts
+TEST: Urinalysis — Microscopic
+Unit: Qualitative (None / Type identified)
+Meaning: Casts are cylindrical molds formed in kidney tubules. Their type indicates specific kidney pathology.
+Normal Finding: None or few hyaline casts
+Abnormal Interpretation: RBC casts = glomerulonephritis. WBC casts = pyelonephritis or interstitial nephritis. Granular casts = chronic kidney disease. Fatty casts = nephrotic syndrome. Hyaline casts = dehydration or fever (usually benign).

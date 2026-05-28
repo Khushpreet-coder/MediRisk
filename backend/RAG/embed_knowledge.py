@@ -1,229 +1,106 @@
 # import os
 # import chromadb
-
 # from sentence_transformers import SentenceTransformer
-# from RAG.text_normalizer import normalize_medical_text
 
-# # =====================================
-# # Load Embedding Model
-# # =====================================
+# from chunking import chunk_knowledge_base
+# from text_normalizer import normalize_medical_text
 
-# model = SentenceTransformer(
-#     "all-MiniLM-L6-v2"
-# )
-
-
-# # =====================================
-# # Create ChromaDB Client
-# # =====================================
+# print("🧠 Loading embedding model...")
+# model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # client = chromadb.PersistentClient(
-#     path="./RAG/chroma_db"
+#     path="rag/chroma_db"
 # )
 
-
-# # =====================================
-# # Create Collection
-# # =====================================
-
+# # ✅ Fresh collection with metadata support
 # collection = client.get_or_create_collection(
-#     name="medical_knowledge"
+#     name="medical_knowledge",
+#     metadata={"hnsw:space": "cosine"}
 # )
 
-
 # # =====================================
-# # Clear Old Embeddings
+# # Knowledge Base Directory
 # # =====================================
-
-# try:
-
-#     existing = collection.get()["ids"]
-
-#     if existing:
-#         collection.delete(ids=existing)
-
-# except Exception as e:
-
-#     print("⚠️ Could not clear old embeddings:", e)
-
-
-# # =====================================
-# # Knowledge Folder
-# # =====================================
-
 # BASE_DIR = os.path.dirname(__file__)
-
-# KNOWLEDGE_DIR = os.path.join(
-#     BASE_DIR,
-#     "knowledge_base"
-# )
-
-
-# # =====================================
-# # Check Folder Exists
-# # =====================================
+# KNOWLEDGE_DIR = os.path.join(BASE_DIR, "knowledge_base")
 
 # if not os.path.exists(KNOWLEDGE_DIR):
-
-#     raise FileNotFoundError(
-#         f"❌ Knowledge folder not found: {KNOWLEDGE_DIR}"
-#     )
-
+#     raise FileNotFoundError(f"❌ Knowledge folder not found: {KNOWLEDGE_DIR}")
 
 # # =====================================
-# # Read Knowledge Files
+# # Read and Embed Knowledge Files with Granular Chunks
 # # =====================================
+# total_chunks = 0
+# chunk_counter = 0
 
-# documents = []
+# for filename in sorted(os.listdir(KNOWLEDGE_DIR)):
+#     filepath = os.path.join(KNOWLEDGE_DIR, filename)
 
-# for filename in os.listdir(KNOWLEDGE_DIR):
-
-#     filepath = os.path.join(
-#         KNOWLEDGE_DIR,
-#         filename
-#     )
-
-#     # skip non-text files
+#     # Skip non-text files
 #     if not filename.endswith(".txt"):
 #         continue
 
-#     print(f"📄 Reading: {filename}")
+#     print(f"\n📄 Processing: {filename}")
 
 #     try:
-
-#         with open(
-#             filepath,
-#             "r",
-#             encoding="utf-8",
-#             errors="replace"
-#         ) as f:
-
-#             text = f.read()
-
-#             # split into small chunks
-#             chunks = text.split("\n\n")
-
+#         with open(filepath, "r", encoding="utf-8", errors="replace") as f:
+#             content = f.read()
+            
+#             # Create granular chunks with metadata
+#             chunks = chunk_knowledge_base(content, filename)
+#             print(f"   ✓ Created {len(chunks)} granular chunks")
+            
 #             for chunk in chunks:
-
-#                 chunk = chunk.strip()
-
-#                 if chunk:
-#                     documents.append(chunk)
-
+#                 chunk_counter += 1
+                
+#                 # Embed chunk content
+#                 try:
+#                     embedding = model.encode(chunk["content"]).tolist()
+                    
+#                     # Create unique ID
+#                     chunk_id = f"{filename}_{chunk_counter}"
+                    
+#                     # Prepare metadata
+#                     metadata = {
+#                         "filename": filename,
+#                         "test_name": chunk.get("test_name", ""),
+#                         "category": chunk.get("category", ""),
+#                         "content_type": chunk.get("content_type", "")
+#                     }
+                    
+#                     # Store in ChromaDB
+#                     collection.add(
+#                         documents=[chunk["content"]],
+#                         metadatas=[metadata],
+#                         ids=[chunk_id],
+#                         embeddings=[embedding]
+#                     )
+                    
+#                     total_chunks += 1
+                    
+#                 except Exception as e:
+#                     print(f"   ⚠️ Error embedding chunk {chunk_counter}: {e}")
+                    
 #     except Exception as e:
+#         print(f"⚠️ Error reading {filename}: {e}")
 
-#         print(f"❌ Failed reading {filename}: {e}")
+# print(f"\n✅ Embedding Complete!")
+# print(f"   Total granular chunks stored: {total_chunks}")
+# print(f"   Collection name: medical_knowledge")
 
-
-# # =====================================
-# # Check Documents
-# # =====================================
-
-# if not documents:
-
-#     raise ValueError(
-#         "❌ No documents found in knowledge base"
-#     )
-
-
-# print(f"\n📚 Total Chunks: {len(documents)}")
-
-
-# # =====================================
-# # Generate Embeddings
-# # =====================================
-
-# print("\n🧠 Generating embeddings...")
-
-# embeddings = model.encode(
-#     documents
-# ).tolist()
-
-
-# # =====================================
-# # Store In ChromaDB
-# # =====================================
-
-# print("\n💾 Storing embeddings in ChromaDB...")
-
-# for i, doc in enumerate(documents):
-
-#     collection.add(
-#         ids=[str(i)],
-#         documents=[doc],
-#         embeddings=[embeddings[i]]
-#     )
-
-
-# # =====================================
-# # Final Success
-# # =====================================
-
-# print("\n✅ Knowledge Base Embedded Successfully")
-
-# print(
-#     "📦 Total Stored Documents:",
-#     collection.count()
-# )
+# ============================================
+# embed_knowledgebase.py
+# ============================================
 
 # import os
 # import chromadb
 
 # from sentence_transformers import SentenceTransformer
 
-# from text_normalizer import normalize_medical_text
-
-
-# # =====================================
-# # Load Embedding Model
-# # =====================================
-
-# print("🧠 Loading embedding model...")
-
-# model = SentenceTransformer(
-#     "all-MiniLM-L6-v2"
-# )
-
+# from chunking import chunk_knowledge_base
 
 # # =====================================
-# # Create ChromaDB Client
-# # =====================================
-
-# client = chromadb.PersistentClient(
-#     path="./RAG/chroma_db"
-# )
-
-
-# # =====================================
-# # Create Collection
-# # =====================================
-
-# collection = client.get_or_create_collection(
-#     name="medical_knowledge"
-# )
-
-
-# # =====================================
-# # Clear Old Embeddings
-# # =====================================
-
-# try:
-
-#     existing = collection.get()["ids"]
-
-#     if existing:
-
-#         collection.delete(ids=existing)
-
-#         print(f"🗑 Deleted {len(existing)} old embeddings")
-
-# except Exception as e:
-
-#     print("⚠️ Could not clear old embeddings:", e)
-
-
-# # =====================================
-# # Knowledge Folder
+# # Paths
 # # =====================================
 
 # BASE_DIR = os.path.dirname(__file__)
@@ -233,40 +110,51 @@
 #     "knowledge_base"
 # )
 
+# CHROMA_PATH = os.path.join(
+#     BASE_DIR,
+#     "chroma_db"
+# )
 
 # # =====================================
-# # Check Folder Exists
+# # Load Embedding Model
 # # =====================================
 
-# if not os.path.exists(KNOWLEDGE_DIR):
+# print("Loading embedding model...")
 
-#     raise FileNotFoundError(
-#         f"❌ Knowledge folder not found: {KNOWLEDGE_DIR}"
-#     )
-
+# model = SentenceTransformer(
+#     "all-MiniLM-L6-v2"
+# )
 
 # # =====================================
-# # Read Knowledge Files
+# # ChromaDB Client
 # # =====================================
 
-# documents = []
-# metadatas = []
-# ids = []
+# client = chromadb.PersistentClient(
+#     path=CHROMA_PATH
+# )
 
-# doc_id = 0
+# collection = client.get_or_create_collection(
+#     name="medical_knowledge",
+#     metadata={"hnsw:space": "cosine"}
+# )
+
+# # =====================================
+# # Process Knowledge Files
+# # =====================================
+
+# total_chunks = 0
 
 # for filename in os.listdir(KNOWLEDGE_DIR):
+
+#     if not filename.endswith(".txt"):
+#         continue
 
 #     filepath = os.path.join(
 #         KNOWLEDGE_DIR,
 #         filename
 #     )
 
-#     # Skip non-text files
-#     if not filename.endswith(".txt"):
-#         continue
-
-#     print(f"\n📄 Reading: {filename}")
+#     print(f"\nProcessing {filename}")
 
 #     try:
 
@@ -279,813 +167,522 @@
 
 #             text = f.read()
 
-#             # =====================================
-#             # Split into chunks
-#             # =====================================
-
-#             chunks = text.split("\n\n")
-
-#             for chunk in chunks:
-
-#                 chunk = chunk.strip()
-
-#                 if not chunk:
-#                     continue
-
-#                 # =====================================
-#                 # Normalize text for embeddings
-#                 # =====================================
-
-#                 normalized_chunk = normalize_medical_text(
-#                     chunk
-#                 )
-
-#                 documents.append(normalized_chunk)
-
-#                 metadatas.append({
-#                     "source_file": filename,
-#                     "original_text": chunk
-#                 })
-
-#                 ids.append(str(doc_id))
-
-#                 doc_id += 1
-
 #     except Exception as e:
 
-#         print(f"❌ Failed reading {filename}: {e}")
+#         print("File read error:", e)
+#         continue
 
+#     # =====================================
+#     # Chunking
+#     # =====================================
 
-# # =====================================
-# # Check Documents
-# # =====================================
-
-# if not documents:
-
-#     raise ValueError(
-#         "❌ No documents found in knowledge base"
+#     chunks = chunk_knowledge_base(
+#         text,
+#         filename
 #     )
 
+#     print(f"Chunks created: {len(chunks)}")
 
-# print(f"\n📚 Total Chunks: {len(documents)}")
+#     # =====================================
+#     # Store Embeddings
+#     # =====================================
 
+#     for idx, chunk in enumerate(chunks):
+
+#         try:
+
+#             content = chunk.get(
+#                 "content",
+#                 ""
+#             ).strip()
+
+#             if not content:
+#                 continue
+
+#             embedding = model.encode(
+#                 content
+#             ).tolist()
+
+#             collection.add(
+
+#                 documents=[content],
+
+#                 embeddings=[embedding],
+
+#                 metadatas=[{
+#                     "category": chunk.get(
+#                         "category",
+#                         "general"
+#                     ),
+
+#                     "test_name": chunk.get(
+#                         "test_name",
+#                         ""
+#                     ),
+
+#                     "content_type": chunk.get(
+#                         "content_type",
+#                         "general"
+#                     ),
+
+#                     "source_file": filename
+#                 }],
+
+#                 ids=[f"{filename}_{idx}"]
+#             )
+
+#             total_chunks += 1
+
+#         except Exception as e:
+
+#             print("Embedding error:", e)
 
 # # =====================================
-# # Generate Embeddings
+# # Done
 # # =====================================
 
-# print("\n🧠 Generating embeddings...")
+# print("\nEmbedding completed")
+# print("Total chunks:", total_chunks)
 
-# embeddings = model.encode(
-#     documents,
-#     show_progress_bar=True
-# ).tolist()
-
-
-# # =====================================
-# # Store In ChromaDB
-# # =====================================
-
-# print("\n💾 Storing embeddings in ChromaDB...")
-
-
-# collection.add(
-#     ids=ids,
-#     documents=documents,
-#     embeddings=embeddings,
-#     metadatas=metadatas
-# )
-
-
-# # =====================================
-# # Final Success
-# # =====================================
-
-# print("\n✅ Knowledge Base Embedded Successfully")
-
-# print(
-#     "📦 Total Stored Documents:",
-#     collection.count()
-# )
 
 # import os
 # import chromadb
-
+# import uuid
 # from sentence_transformers import SentenceTransformer
+# from chunking import chunk_medical_report
 
-# from text_normalizer import normalize_medical_text
-
-
-# # =====================================
-# # Load Embedding Model
-# # =====================================
-
-# print("🧠 Loading embedding model...")
-
-# model = SentenceTransformer(
-#     "all-MiniLM-L6-v2"
-# )
-
-
-# # =====================================
-# # Create ChromaDB Client
-# # =====================================
-
-# client = chromadb.PersistentClient(
-#     path="./RAG/chroma_db"
-# )
-
-
-# # =====================================
-# # Create Collection
-# # =====================================
-
-# collection = client.get_or_create_collection(
-#     name="medical_knowledge"
-# )
-
-
-# # =====================================
-# # Clear Old Embeddings
-# # =====================================
-
-# try:
-
-#     existing = collection.get()["ids"]
-
-#     if existing:
-
-#         collection.delete(ids=existing)
-
-#         print(f"🗑 Deleted {len(existing)} old embeddings")
-
-# except Exception as e:
-
-#     print("⚠️ Could not clear old embeddings:", e)
-
-
-# # =====================================
-# # Knowledge Folder
-# # =====================================
+# # =========================================================
+# # PATHS (FIXED)
+# # =========================================================
 
 # BASE_DIR = os.path.dirname(__file__)
 
-# KNOWLEDGE_DIR = os.path.join(
-#     BASE_DIR,
-#     "knowledge_base"
-# )
+# KNOWLEDGE_DIR = os.path.join(BASE_DIR, "knowledge_base")
+# CHROMA_PATH = os.path.join(BASE_DIR, "chroma_db")
 
+# # 👉 IMPORTANT: auto-create folder if missing
+# os.makedirs(KNOWLEDGE_DIR, exist_ok=True)
+# os.makedirs(CHROMA_PATH, exist_ok=True)
 
-# # =====================================
-# # Check Folder Exists
-# # =====================================
 
-# if not os.path.exists(KNOWLEDGE_DIR):
+# # =========================================================
+# # LOAD MODEL
+# # =========================================================
 
-#     raise FileNotFoundError(
-#         f"❌ Knowledge folder not found: {KNOWLEDGE_DIR}"
-#     )
+# print("Loading embedding model...")
 
+# model = SentenceTransformer("all-MiniLM-L6-v2")
+# model.max_seq_length = 512
 
-# # =====================================
-# # Chunking Function
-# # =====================================
 
-# def chunk_text(text, max_len=800):
+# # =========================================================
+# # CHROMA CLIENT
+# # =========================================================
 
-#     paragraphs = text.split("\n")
-
-#     chunks = []
-#     current = ""
-
-#     for p in paragraphs:
-
-#         if len(current) + len(p) < max_len:
-#             current += " " + p
-#         else:
-#             chunks.append(current.strip())
-#             current = p
-
-#     if current:
-#         chunks.append(current.strip())
-
-#     return chunks
-
-
-# # =====================================
-# # Read Knowledge Files
-# # =====================================
-
-# documents = []
-# metadatas = []
-# ids = []
-
-# doc_id = 0
-
-# for filename in os.listdir(KNOWLEDGE_DIR):
-
-#     filepath = os.path.join(
-#         KNOWLEDGE_DIR,
-#         filename
-#     )
-
-#     # Skip non-text files
-#     if not filename.endswith(".txt"):
-#         continue
-
-#     print(f"\n📄 Reading: {filename}")
-
-#     try:
-
-#         with open(
-#             filepath,
-#             "r",
-#             encoding="utf-8",
-#             errors="replace"
-#         ) as f:
-
-#             text = f.read()
-
-#             # =====================================
-#             # Split into chunks
-#             # =====================================
-
-#             chunks = chunk_text(text)
-
-#             for chunk in chunks:
-
-#                 chunk = chunk.strip()
-
-#                 if not chunk:
-#                     continue
-
-#                 # =====================================
-#                 # Normalize text for embeddings
-#                 # =====================================
-
-#                 normalized_chunk = normalize_medical_text(
-#                     chunk
-#                 )
-
-#                 documents.append(normalized_chunk)
-
-#                 metadatas.append({
-#                     "source_file": filename,
-#                     "original_text": chunk
-#                 })
-
-#                 ids.append(str(doc_id))
-
-#                 doc_id += 1
-
-#     except Exception as e:
-
-#         print(f"❌ Failed reading {filename}: {e}")
-
-
-# # =====================================
-# # Check Documents
-# # =====================================
-
-# if not documents:
-
-#     raise ValueError(
-#         "❌ No documents found in knowledge base"
-#     )
-
-
-# print(f"\n📚 Total Chunks: {len(documents)}")
-
-
-# # =====================================
-# # Generate Embeddings
-# # =====================================
-
-# print("\n🧠 Generating embeddings...")
-
-# embeddings = model.encode(
-#     documents,
-#     show_progress_bar=True
-# ).tolist()
-
-
-# # =====================================
-# # Store In ChromaDB
-# # =====================================
-
-# print("\n💾 Storing embeddings in ChromaDB...")
-
-
-# collection.add(
-#     ids=ids,
-#     documents=documents,
-#     embeddings=embeddings,
-#     metadatas=metadatas
-# )
-
-
-# # =====================================
-# # Final Success
-# # =====================================
-
-# print("\n✅ Knowledge Base Embedded Successfully")
-
-# print(
-#     "📦 Total Stored Documents:",
-#     collection.count()
-# )
-
-
-# import os
-# import re
-# import chromadb
-
-# from sentence_transformers import SentenceTransformer
-
-# from text_normalizer import normalize_medical_text
-
-
-# # =====================================
-# # Load Embedding Model
-# # =====================================
-
-# print("🧠 Loading embedding model...")
-
-# model = SentenceTransformer(
-#     "all-MiniLM-L6-v2"
-# )
-
-
-# # =====================================
-# # Create ChromaDB Client
-# # =====================================
-
-# client = chromadb.PersistentClient(
-#     path="./RAG/chroma_db"
-# )
-
-
-# # =====================================
-# # Create Collection
-# # =====================================
+# client = chromadb.PersistentClient(path=CHROMA_PATH)
 
 # collection = client.get_or_create_collection(
-#     name="medical_knowledge"
+#     name="medical_knowledge",
+#     metadata={"hnsw:space": "cosine"}
 # )
 
 
-# # =====================================
-# # Clear Old Embeddings
-# # =====================================
+# # =========================================================
+# # PROCESS FILES
+# # =========================================================
 
-# try:
-
-#     existing = collection.get()["ids"]
-
-#     if existing:
-
-#         collection.delete(ids=existing)
-
-#         print(f"🗑 Deleted {len(existing)} old embeddings")
-
-# except Exception as e:
-
-#     print("⚠️ Could not clear old embeddings:", e)
-
-
-# # =====================================
-# # Knowledge Folder
-# # =====================================
-
-# BASE_DIR = os.path.dirname(__file__)
-
-# KNOWLEDGE_DIR = os.path.join(
-#     BASE_DIR,
-#     "knowledge_base"
-# )
-
-
-# # =====================================
-# # Check Folder Exists
-# # =====================================
-
-# if not os.path.exists(KNOWLEDGE_DIR):
-
-#     raise FileNotFoundError(
-#         f"❌ Knowledge folder not found: {KNOWLEDGE_DIR}"
-#     )
-
-
-# # =====================================
-# # Semantic Chunking Function
-# # =====================================
-
-# def chunk_text(text):
-
-#     # Normalize line breaks
-#     text = text.replace("\r", "\n")
-
-#     # Split using section headings
-#     pattern = r'\n(?=[A-Z][A-Za-z0-9\s\(\)/%-]+:)'
-
-#     sections = re.split(pattern, text)
-
-#     chunks = []
-
-#     for sec in sections:
-
-#         sec = sec.strip()
-
-#         # Skip noisy chunks
-#         if len(sec) < 50:
-#             continue
-
-#         # Large sections → split further
-#         if len(sec) > 1200:
-
-#             paragraphs = sec.split("\n\n")
-
-#             current = ""
-
-#             for para in paragraphs:
-
-#                 para = para.strip()
-
-#                 if not para:
-#                     continue
-
-#                 if len(current) + len(para) < 800:
-
-#                     current += "\n" + para
-
-#                 else:
-
-#                     chunks.append(current.strip())
-
-#                     current = para
-
-#             if current:
-#                 chunks.append(current.strip())
-
-#         else:
-
-#             chunks.append(sec)
-
-#     return chunks
-
-
-# # =====================================
-# # Read Knowledge Files
-# # =====================================
-
-# documents = []
-
-# metadatas = []
-
-# ids = []
-
-# doc_id = 0
-
+# total_chunks = 0
 
 # for filename in os.listdir(KNOWLEDGE_DIR):
 
-#     filepath = os.path.join(
-#         KNOWLEDGE_DIR,
-#         filename
-#     )
-
-#     # Skip non-text files
 #     if not filename.endswith(".txt"):
 #         continue
 
-#     print(f"\n📄 Reading: {filename}")
+#     filepath = os.path.join(KNOWLEDGE_DIR, filename)
+
+#     print(f"\n📄 Processing file: {filename}")
 
 #     try:
-
-#         with open(
-#             filepath,
-#             "r",
-#             encoding="utf-8",
-#             errors="replace"
-#         ) as f:
-
+#         with open(filepath, "r", encoding="utf-8", errors="replace") as f:
 #             text = f.read()
 
-#             # =====================================
-#             # Create semantic chunks
-#             # =====================================
-
-#             chunks = chunk_text(text)
-
-#             print(f"🔹 Chunks Created: {len(chunks)}")
-
-#             for chunk in chunks:
-
-#                 chunk = chunk.strip()
-
-#                 if not chunk:
-#                     continue
-
-#                 # =====================================
-#                 # Normalize medical text
-#                 # =====================================
-
-#                 normalized_chunk = normalize_medical_text(
-#                     chunk
-#                 )
-
-#                 documents.append(
-#                     normalized_chunk
-#                 )
-
-#                 metadatas.append({
-
-#                     "source_file": filename,
-
-#                     "original_text": chunk
-
-#                 })
-
-#                 ids.append(
-#                     str(doc_id)
-#                 )
-
-#                 doc_id += 1
-
 #     except Exception as e:
+#         print("❌ File read error:", e)
+#         continue
 
-#         print(
-#             f"❌ Failed reading {filename}: {e}"
+
+#     # =====================================================
+#     # CHUNKING
+#     # =====================================================
+
+#     chunks = chunk_medical_report(text, filename)
+
+#     print(f"🔹 Chunks created: {len(chunks)}")
+
+
+#     # =====================================================
+#     # BATCH STORAGE (IMPORTANT OPTIMIZATION)
+#     # =====================================================
+
+#     docs = []
+#     embs = []
+#     metas = []
+#     ids = []
+
+#     for idx, chunk in enumerate(chunks):
+
+#         try:
+#             content = chunk.get("content", "").strip()
+
+#             if not content:
+#                 continue
+
+#             # skip extremely short noise chunks
+#             if len(content) < 20:
+#                 continue
+
+#             # embedding (NORMALIZED → IMPORTANT)
+#             embedding = model.encode(
+#                 content,
+#                 normalize_embeddings=True
+#             ).tolist()
+
+#             docs.append(content)
+#             embs.append(embedding)
+
+#             metas.append({
+#                 "category": chunk.get("category", "general"),
+#                 "test_name": chunk.get("test_name", ""),
+#                 "content_type": chunk.get("content_type", "general"),
+#                 "source_file": filename
+#             })
+
+#             # SAFE UNIQUE ID (prevents overwrite)
+#             ids.append(f"{filename}_{idx}_{uuid.uuid4().hex[:8]}")
+
+#         except Exception as e:
+#             print("⚠️ Embedding error:", e)
+
+
+#     # =====================================================
+#     # STORE IN CHROMA
+#     # =====================================================
+
+#     if docs:
+
+#         collection.add(
+#             documents=docs,
+#             embeddings=embs,
+#             metadatas=metas,
+#             ids=ids
 #         )
 
+#         total_chunks += len(docs)
 
-# # =====================================
-# # Check Documents
-# # =====================================
-
-# if not documents:
-
-#     raise ValueError(
-#         "❌ No documents found in knowledge base"
-#     )
+#         print(f"✅ Stored {len(docs)} chunks")
 
 
-# print(f"\n📚 Total Chunks: {len(documents)}")
+# # =========================================================
+# # DONE
+# # =========================================================
+
+# print("\n🎉 Embedding completed successfully!")
+# print("📊 Total chunks stored:", total_chunks)
 
 
-# # =====================================
-# # Generate Embeddings
-# # =====================================
 
-# print("\n🧠 Generating embeddings...")
+# import os
+# import chromadb
+# import uuid
+# from sentence_transformers import SentenceTransformer
+# from chunking import chunk_medical_report
 
-# embeddings = model.encode(
+# # =========================================================
+# # PATHS
+# # =========================================================
 
-#     documents,
+# BASE_DIR = os.path.dirname(__file__)
 
-#     show_progress_bar=True
+# KNOWLEDGE_DIR = os.path.join(BASE_DIR, "knowledge_base")
+# CHROMA_PATH = os.path.join(BASE_DIR, "chroma_db")
 
-# ).tolist()
+# # Auto-create folders if missing
+# os.makedirs(KNOWLEDGE_DIR, exist_ok=True)
+# os.makedirs(CHROMA_PATH, exist_ok=True)
 
+# # =========================================================
+# # LOAD MODEL
+# # =========================================================
 
-# # =====================================
-# # Store In ChromaDB
-# # =====================================
+# print("Loading embedding model...")
 
-# print("\n💾 Storing embeddings in ChromaDB...")
+# model = SentenceTransformer("all-MiniLM-L6-v2")
+# model.max_seq_length = 512
 
+# # =========================================================
+# # CHROMA CLIENT
+# # =========================================================
 
-# collection.add(
+# client = chromadb.PersistentClient(path=CHROMA_PATH)
 
-#     ids=ids,
-
-#     documents=documents,
-
-#     embeddings=embeddings,
-
-#     metadatas=metadatas
-
+# collection = client.get_or_create_collection(
+#     name="medical_knowledge",
+#     metadata={"hnsw:space": "cosine"}
 # )
 
+# # =========================================================
+# # CHECK INPUT DATA
+# # =========================================================
 
-# # =====================================
-# # Final Success
-# # =====================================
+# files = [f for f in os.listdir(KNOWLEDGE_DIR) if f.endswith(".txt")]
 
-# print("\n✅ Knowledge Base Embedded Successfully")
+# if not files:
+#     print("⚠️ No .txt files found in knowledge_base folder.")
+#     print("👉 Add files and run again.")
+#     exit()
 
-# print(
-#     "📦 Total Stored Documents:",
-#     collection.count()
-# )
+# # =========================================================
+# # PROCESS FILES
+# # =========================================================
 
+# total_chunks = 0
+
+# for filename in files:
+
+#     filepath = os.path.join(KNOWLEDGE_DIR, filename)
+
+#     print(f"\n📄 Processing file: {filename}")
+
+#     try:
+#         with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
+#             text = f.read()
+
+#     except Exception as e:
+#         print("❌ File read error:", e)
+#         continue
+
+#     # =====================================================
+#     # CHUNKING
+#     # =====================================================
+
+#     chunks = chunk_medical_report(text, filename)
+
+#     print(f"🔹 Chunks created: {len(chunks)}")
+
+#     # =====================================================
+#     # STORAGE PREP
+#     # =====================================================
+
+#     docs = []
+#     embs = []
+#     metas = []
+#     ids = []
+
+#     for idx, chunk in enumerate(chunks):
+
+#         content = chunk.get("content", "").strip()
+
+#         if len(content) < 20:
+#             continue
+
+#         try:
+#             embedding = model.encode(
+#                 content,
+#                 normalize_embeddings=True
+#             ).tolist()
+
+#             docs.append(content)
+#             embs.append(embedding)
+
+#             metas.append({
+#                 "category": chunk.get("category", "general"),
+#                 "test_name": chunk.get("test_name", ""),
+#                 "content_type": chunk.get("content_type", "general"),
+#                 "source_file": filename
+#             })
+
+#             ids.append(f"{filename}_{idx}_{uuid.uuid4().hex[:8]}")
+
+#         except Exception as e:
+#             print("⚠️ Embedding error:", e)
+
+#     # =====================================================
+#     # STORE IN CHROMA
+#     # =====================================================
+
+#     if docs:
+#         collection.add(
+#             documents=docs,
+#             embeddings=embs,
+#             metadatas=metas,
+#             ids=ids
+#         )
+
+#         total_chunks += len(docs)
+
+#         print(f"✅ Stored {len(docs)} chunks")
+
+# # =========================================================
+# # DONE
+# # =========================================================
+
+# print("\n🎉 Embedding completed successfully!")
+# print(f"📊 Total chunks stored: {total_chunks}")
 
 import os
 import chromadb
-
+import uuid
 from sentence_transformers import SentenceTransformer
+from chunking import chunk_medical_report
 
-from chunking import semantic_chunk
-from text_normalizer import normalize_medical_text
+# =========================================================
+# PATHS (SAFE + ROBUST)
+# =========================================================
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# =====================================
-# Load Model
-# =====================================
+KNOWLEDGE_DIR = os.path.join(BASE_DIR, "KB")
+CHROMA_PATH = os.path.join(BASE_DIR, "chroma_db")
 
-print("🧠 Loading embedding model...")
+print("\n📂 BASE_DIR:", BASE_DIR)
+print("📂 KNOWLEDGE_DIR:", KNOWLEDGE_DIR)
+print("📂 CHROMA_PATH:", CHROMA_PATH)
 
-model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
-)
+# Auto-create folders if missing
+# os.makedirs(KNOWLEDGE_DIR, exist_ok=True)
+os.makedirs(CHROMA_PATH, exist_ok=True)
 
+# =========================================================
+# CHECK FILES
+# =========================================================
 
-# =====================================
-# ChromaDB Client
-# =====================================
+all_files = os.listdir(KNOWLEDGE_DIR) if os.path.exists(KNOWLEDGE_DIR) else []
 
-client = chromadb.PersistentClient(
-    path="rag/chroma_db"
-)
+print("\n📄 All files found:", all_files)
 
+files = [
+    f for f in all_files
+    if f.lower().endswith(".txt")
+]
 
-# =====================================
-# Collection
-# =====================================
+print("📄 .txt files filtered:", files)
+
+if not files:
+    print("\n⚠️ No .txt files found in knowledge_base folder.")
+    print("👉 Add .txt files here:", KNOWLEDGE_DIR)
+    exit()
+
+# =========================================================
+# LOAD EMBEDDING MODEL
+# =========================================================
+
+print("\n🔄 Loading embedding model...")
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
+model.max_seq_length = 512
+
+print("✅ Model loaded successfully")
+
+# =========================================================
+# CHROMA DB INIT
+# =========================================================
+
+client = chromadb.PersistentClient(path=CHROMA_PATH)
 
 collection = client.get_or_create_collection(
-    name="medical_kb"
+    name="medical_knowledge",
+    metadata={"hnsw:space": "cosine"}
 )
 
+print("✅ Chroma DB initialized")
 
-# =====================================
-# Clear Old Data
-# =====================================
+# =========================================================
+# PROCESS FILES
+# =========================================================
 
-try:
+total_chunks = 0
 
-    existing = collection.get()["ids"]
+for filename in files:
 
-    if existing:
+    filepath = os.path.join(KNOWLEDGE_DIR, filename)
 
-        collection.delete(ids=existing)
+    print(f"\n📄 Processing file: {filename}")
 
-        print(f"🗑 Deleted {len(existing)} old embeddings")
-
-except Exception as e:
-
-    print("⚠️ Cleanup issue:", e)
-
-
-# =====================================
-# Knowledge Base Path
-# =====================================
-
-KB_PATH = "rag/knowledge_base"
-
-
-# =====================================
-# Store Data
-# =====================================
-
-documents = []
-embeddings = []
-metadatas = []
-ids = []
-
-doc_id = 0
-
-
-# =====================================
-# Read Files
-# =====================================
-
-for file in os.listdir(KB_PATH):
-
-    filepath = os.path.join(
-        KB_PATH,
-        file
-    )
-
-    # Skip non-txt files
-    if not file.endswith(".txt"):
-        continue
-
-    print(f"\n📄 Reading: {file}")
-
+    # -------------------------
+    # READ FILE
+    # -------------------------
     try:
-
-        with open(
-            filepath,
-            "r",
-            encoding="utf-8",
-            errors="replace"
-        ) as f:
-
+        with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
             text = f.read()
 
-        # =====================================
-        # Semantic Chunking
-        # =====================================
-
-        chunks = semantic_chunk(text)
-
-        print(f"🔹 Chunks Created: {len(chunks)}")
-
-        for chunk in chunks:
-
-            chunk = chunk.strip()
-
-            if not chunk:
-                continue
-
-            # =====================================
-            # Normalize Text
-            # =====================================
-
-            normalized_chunk = normalize_medical_text(
-                chunk
-            )
-
-            documents.append(
-                normalized_chunk
-            )
-
-            metadatas.append({
-
-                "source_file": file,
-
-                "original_text": chunk
-
-            })
-
-            ids.append(
-                str(doc_id)
-            )
-
-            doc_id += 1
+        if not text.strip():
+            print("⚠️ Empty file skipped:", filename)
+            continue
 
     except Exception as e:
+        print("❌ File read error:", e)
+        continue
 
-        print(f"❌ Failed reading {file}: {e}")
+    # -------------------------
+    # CHUNKING
+    # -------------------------
+    chunks = chunk_medical_report(text, filename)
 
+    print(f"🔹 Chunks created: {len(chunks)}")
 
-# =====================================
-# Check Empty
-# =====================================
+    docs, embs, metas, ids = [], [], [], []
 
-if not documents:
+    # -------------------------
+    # EMBEDDING
+    # -------------------------
+    for idx, chunk in enumerate(chunks):
 
-    raise ValueError(
-        "❌ No documents found"
-    )
+        content = chunk.get("content", "").strip()
 
+        if len(content) < 20:
+            continue
 
-print(f"\n📚 Total Chunks: {len(documents)}")
+        try:
+            embedding = model.encode(
+                content,
+                normalize_embeddings=True
+            ).tolist()
 
+            docs.append(content)
+            embs.append(embedding)
 
-# =====================================
-# Generate Embeddings
-# =====================================
+            metas.append({
+                "category": chunk.get("category", "general"),
+                "test_name": chunk.get("test_name", ""),
+                "content_type": chunk.get("content_type", "general"),
+                "source_file": filename
+            })
 
-print("\n🧠 Generating embeddings...")
+            ids.append(f"{filename}_{idx}_{uuid.uuid4().hex[:8]}")
 
-embeddings = model.encode(
+        except Exception as e:
+            print("⚠️ Embedding error:", e)
 
-    documents,
+    # -------------------------
+    # STORE IN CHROMA
+    # -------------------------
+    if docs:
+        collection.add(
+            documents=docs,
+            embeddings=embs,
+            metadatas=metas,
+            ids=ids
+        )
 
-    show_progress_bar=True
+        total_chunks += len(docs)
+        print(f"✅ Stored {len(docs)} chunks")
 
-).tolist()
+    else:
+        print("⚠️ No valid chunks to store for:", filename)
 
+# =========================================================
+# DONE
+# =========================================================
 
-# =====================================
-# Store In ChromaDB
-# =====================================
-
-print("\n💾 Storing embeddings...")
-
-
-collection.add(
-
-    ids=ids,
-
-    documents=documents,
-
-    embeddings=embeddings,
-
-    metadatas=metadatas
-
-)
-
-
-# =====================================
-# Done
-# =====================================
-
-print("\n✅ Embedding completed")
-
-print(
-    "📦 Total Stored Documents:",
-    collection.count()
-)
+print("\n🎉 Embedding pipeline completed successfully!")
+print(f"📊 Total chunks stored: {total_chunks}")
