@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Landing({ onNavigate }) {
+export default function Landing({ onNavigate, user, onShowAuth }) {
   const [activeStep, setActiveStep] = useState(null);
 
   const steps = [
@@ -20,7 +20,7 @@ export default function Landing({ onNavigate }) {
             <h1>Healthcare AI,<br />Simplified for Modern Healthcare.</h1>
             <p>Fast, accurate, and automated medical report understanding
             powered by next-generation AI systems.</p>
-            <button className="btn-primary" onClick={() => onNavigate('upload')}>Get Started</button>
+            <button className="btn-primary" onClick={() => user ? onNavigate('upload') : onShowAuth()}>Get Started</button>
           </div>
 
           <div className="hero-card glass-panel">

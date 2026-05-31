@@ -19,8 +19,10 @@ export default function Upload({ onUploadSuccess }) {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/reports/upload", {
+      const token = localStorage.getItem('token');
+      const response = await fetch("/api/reports/upload", {
         method: "POST",
+        headers: { "Authorization": `Bearer ${token}` },
         body: formData,
       });
 

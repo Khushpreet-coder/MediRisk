@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Result({ reportId, onReset }) {
+export default function Result({ reportId, onReset, onBack, onChat }) {
   const [data, setData] = useState({ tests: [], summary: "Loading analysis..." });
   const [loading, setLoading] = useState(true);
 
@@ -8,7 +8,10 @@ export default function Result({ reportId, onReset }) {
     const fetchData = async () => {
       if (!reportId) return;
       try {
-        const res = await fetch(`http://127.0.0.1:8000/reports/report/${reportId}`);
+        const token = localStorage.getItem('token');
+        const res = await fetch(`/api/reports/report/${reportId}`, {
+          headers: { "Authorization": `Bearer ${token}` }
+        });
         const json = await res.json();
         const payload = json.extracted_data || {};
         
@@ -41,7 +44,10 @@ export default function Result({ reportId, onReset }) {
     <div className="dashboard-layout result-container">
       <header className="result-header">
         <h1>Clinical Analysis</h1>
-        <button className="btn-primary" onClick={onReset}>Scan Another</button>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          {onBack && <button className="btn-secondary" onClick={onBack}>Back to Reports</button>}
+          <button className="btn-primary" onClick={onReset}>Scan Another</button>
+        </div>
       </header>
 
       <div className="glass-panel result-panel">
@@ -73,6 +79,7 @@ export default function Result({ reportId, onReset }) {
         <p className="summary-text">{data.summary}</p>
 
         <div className="result-actions">
+          {onChat && <button className="btn-primary" onClick={() => onChat(reportId)}>Ask AI</button>}
           <button className="btn-primary" onClick={handleDownload}>
             Download Summary
           </button>
