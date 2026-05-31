@@ -1,7 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+const healthTips = [
+  { icon: '💧', title: "Stay Hydrated", tip: "Drink at least 8 glasses of water daily to maintain proper hydration and kidney function." },
+  { icon: '🚶', title: "Move Daily", tip: "Walking 30 minutes a day can reduce the risk of heart disease by up to 35%." },
+  { icon: '😴', title: "Sleep Well", tip: "Adults need 7-9 hours of sleep per night for optimal immune function and brain health." },
+  { icon: '🥗', title: "Eat Colorful", tip: "Eat a variety of colorful fruits and vegetables to ensure a wide range of essential nutrients." },
+  { icon: '🩺', title: "Stay Proactive", tip: "Regular health check-ups can detect potential issues early when they're most treatable." },
+  { icon: '🧘', title: "Manage Stress", tip: "Chronic stress raises cortisol levels — try deep breathing or meditation for 5 minutes daily." },
+  { icon: '💪', title: "Build Strength", tip: "Include strength training twice a week to maintain muscle mass and bone density as you age." },
+  { icon: '☀️', title: "Soak the Sun", tip: "Get 15-20 minutes of morning sunlight for vitamin D production and better sleep cycles." },
+];
 
 export default function Landing({ onNavigate, user, onShowAuth }) {
   const [activeStep, setActiveStep] = useState(null);
+  const [tipIndex, setTipIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTipIndex(prev => (prev + 1) % healthTips.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
 
   const steps = [
     { id: 0, title: "Upload & OCR", summary: "Uses PyTesseract and OpenCV to convert raw scans into machine-readable text with CLAHE enhancement." },
@@ -277,6 +296,33 @@ export default function Landing({ onNavigate, user, onShowAuth }) {
           <div className="feature-text">
             <h3>Summarize Findings</h3>
             <p>Provides concise, evidence-based summaries of key findings to facilitate rapid clinical decision-making.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Health Tips Section */}
+      <section className="health-tips-section" id="health-tips">
+        <div className="health-tips-header">
+          <span className="health-tips-badge">Daily Wellness</span>
+          <h2>Health Tips for You</h2>
+          <p>Simple daily habits for a healthier life</p>
+        </div>
+        <div className="health-tip-card glass-panel">
+          <div className="health-tip-glow" />
+          <div className="health-tip-inner">
+            <span className="health-tip-icon">{healthTips[tipIndex].icon}</span>
+            <div className="health-tip-content">
+              <span className="health-tip-label">{healthTips[tipIndex].title}</span>
+              <p className="health-tip-text">{healthTips[tipIndex].tip}</p>
+            </div>
+          </div>
+          <div className="health-tip-footer">
+            <div className="health-tip-dots">
+              {healthTips.map((_, i) => (
+                <button key={i} className={`health-tip-dot ${i === tipIndex ? 'active' : ''}`} onClick={() => setTipIndex(i)} aria-label={`Tip ${i + 1}`} />
+              ))}
+            </div>
+
           </div>
         </div>
       </section>
