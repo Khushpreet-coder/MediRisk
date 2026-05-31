@@ -1,174 +1,4 @@
-// import React from 'react';
-
-// export default function Landing({ onNavigate }) {
-//   const steps = [
-//     { title: "Secure Upload & OCR", desc: "Digital ingestion and high-precision extraction." },
-//     { title: "RAG Context Retrieval", desc: "Cross-referencing biomarkers with medical indices." },
-//     { title: "Llama-3 Synthesis", desc: "Generating a compassionate, personalized summary." }
-//   ];
-
-//   return (
-//     <div style={{ padding: '80px 10%', color: '#f8fafc', maxWidth: '1000px', margin: '0 auto' }}>
-      
-//       {/* Hero */}
-//       <section style={{ marginBottom: '100px' }}>
-//         <h1 style={{ fontSize: '48px', fontWeight: '700', marginBottom: '20px' }}>AI-Powered Clinical Analysis</h1>
-//         <p style={{ color: '#94a3b8', fontSize: '18px', marginBottom: '30px' }}>Your medical reports, simplified by AI.</p>
-//         <button className="btn" onClick={() => onNavigate('upload')}>Upload Laboratory Report</button>
-//       </section>
-
-      
-
-//       {/* Engine Core Features (Simplified) */}
-//       <section>
-//         <h2 style={{ marginBottom: '30px' }}>Engine Core Components</h2>
-//         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
-//           {['Native Parser', 'RAG Verification', 'Anomaly Flagging'].map((feat, i) => (
-//             <div key={i} className="glass-panel" style={{ padding: '20px', borderRadius: '12px', textAlign: 'center' }}>
-//               <h4 style={{ margin: '0 0 10px 0' }}>{feat}</h4>
-//             </div>
-//           ))}
-//         </div>
-//       </section>
-
-//       {/* Ladder / Timeline How It Works */}
-//       <section style={{ marginBottom: '100px' }}>
-//         <h2 style={{ marginBottom: '50px', textAlign: 'center' }}>How It Works</h2>
-//         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', position: 'relative' }}>
-//           {/* The Vertical Line */}
-//           <div style={{ position: 'absolute', left: '24px', top: '0', bottom: '0', width: '2px', background: '#334155' }}></div>
-          
-//           {steps.map((step, i) => (
-//             <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '30px', zIndex: 1 }}>
-//               <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>{i + 1}</div>
-//               <div className="glass-panel" style={{ padding: '20px', flex: 1, borderRadius: '12px' }}>
-//                 <h3 style={{ margin: '0 0 5px 0' }}>{step.title}</h3>
-//                 <p style={{ margin: 0, color: '#94a3b8', fontSize: '14px' }}>{step.desc}</p>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
-
-// import React from 'react';
-// import React, { useState } from 'react';
-
-// export default function Landing({ onNavigate }) {
-//   const steps = [
-//     { title: "01. Secure Upload & OCR", desc: "Digital ingestion and high-precision extraction." },
-//     { title: "02. RAG Context Retrieval", desc: "Cross-referencing biomarkers with medical indices." },
-//     { title: "03. Llama-3 Synthesis", desc: "Generating a compassionate, personalized summary." }
-//   ];
-
-//   return (
-//     <div style={{ width: '100%' }}>
-//       {/* Navbar */}
-      
-
-//       {/* Hero: Left Aligned */}
-//       {/* Hero: Left Aligned Content + Right Aligned Image */}
-// <section className="section-full" id="home" 
-//   style={{ 
-//     height: '100vh', 
-//     display: 'flex', 
-//     alignItems: 'center', 
-//     justifyContent: 'space-between',
-//     padding: '0 5%'
-//   }}>
-  
-//   {/* Left: Text Content */}
-//   <div style={{ flex: 1, maxWidth: '600px' }}>
-//     <h1 style={{ fontSize: '64px', marginBottom: '20px', lineHeight: '1.1' }}>
-//       Clinical Intelligence, Simplified.
-//     </h1>
-//     <p style={{ fontSize: '20px', color: '#94a3b8', marginBottom: '40px' }}>
-//       Transform complex laboratory data into actionable health insights 
-//       using RAG-grounded AI analysis.
-//     </p>
-//     <button className="btn-primary" onClick={() => onNavigate('upload')}>Get Started</button>
-//   </div>
-
-//   {/* Right: Illustration/Image */}
-//   <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-//     <img 
-//       src="/path-to-your-medical-ai-graphic.png" 
-//       alt="Clinical AI Analysis" 
-//       style={{ width: '80%', maxWidth: '500px', borderRadius: '20px', filter: 'drop-shadow(0 20px 25px rgb(0 0 0 / 0.3))' }} 
-//     />
-//   </div>
-// </section>
-
-
-
-//       {/* Ladder: Centered */}
-//       export default function Landing({ onNavigate }) {
-//   const [activeStep, setActiveStep] = useState(null);
-
-//   const steps = [
-//     { id: 0, title: "01. Upload & OCR", summary: "Uses PyTesseract and OpenCV to convert raw scans into machine-readable text with CLAHE enhancement." },
-//     { id: 1, title: "02. RAG Retrieval", summary: "Queries our vector database to find medical reference ranges relevant to your specific markers." },
-//     { id: 2, title: "03. LLM Parsing", summary: "Analyzes structured data against guidelines to identify abnormalities and synthesize findings." },
-//     { id: 3, title: "04. CQS Score", summary: "Our custom Benchmarking engine calculates the Clinical Quality Score to ensure output reliability." }
-//   ];
-
-//   return (
-//     <section className="section-full" id="how-it-works" style={{ background: '#0f172a', padding: '80px 20px' }}>
-//       <h2 style={{ textAlign: 'center', marginBottom: '60px' }}>How It Works</h2>
-      
-//       {/* Interactive Pipeline Container */}
-//       <div className="pipeline-container">
-//         <div className="pipeline-line"></div>
-//         <div className="pulse-orb"></div>
-        
-//         {steps.map((step) => (
-//           <div 
-//             key={step.id} 
-//             className={`node ${activeStep === step.id ? 'active' : ''}`}
-//             onClick={() => setActiveStep(activeStep === step.id ? null : step.id)}
-//             style={{ 
-//               borderColor: step.id === 3 ? '#10b981' : '#3b82f6',
-//               color: step.id === 3 ? '#10b981' : 'white'
-//             }}
-//           >
-//             <h4 style={{ margin: 0 }}>{step.title}</h4>
-//             <div className="node-summary" style={{ marginTop: '10px', fontSize: '13px', color: '#94a3b8' }}>
-//               {step.summary}
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-      
-//       <p style={{ textAlign: 'center', marginTop: '60px', color: '#94a3b8' }}>
-//         Click a node to explore the technical research methodology behind each stage.
-//       </p>
-//     </section>
-//   );
-// }
-
-//       {/* Engine Components: Left Aligned */}
-//       <section className="section-full" id="features">
-//         <h2 style={{ marginBottom: '40px' }}>Features</h2>
-//         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
-//           {['Native Parser', 'RAG Verification', 'Anomaly Flagging'].map((feat, i) => (
-//             <div key={i} className="glass-panel" style={{ padding: '30px', borderRadius: '12px' }}>
-//               <h4>{feat}</h4>
-//             </div>
-//           ))}
-//         </div>
-//       </section>
-
-      
-//     </div>
-//   );
-// }
-
 import React, { useState } from 'react';
-import tickmarkImg from '../assets/images/report_tickmark.jpg';
-import domainImg from '../assets/images/Add domain know.jpg';
-import summaryImg from '../assets/images/summary.jpg';
 
 export default function Landing({ onNavigate }) {
   const [activeStep, setActiveStep] = useState(null);
@@ -180,93 +10,297 @@ export default function Landing({ onNavigate }) {
     { id: 3, title: "LLM", summary: "Analyzes structured data and RAG results to provide comprehensive insights." },
     { id: 4, title: "Summary generation", summary: "Creates concise, evidence-based summaries of key findings to facilitate rapid clinical decision-making." }
   ];
-  const features = [
-  { title: "Native Parser", desc: "Our proprietary engine converts complex, noisy lab scans into structured machine-readable JSON.", img: "/parser.svg" },
-  { title: "RAG Verification", desc: "We ground LLM outputs in verified medical indices to eliminate hallucinations and ensure clinical accuracy.", img: "/rag.svg" },
-  { title: "Anomaly Flagging", desc: "Automated threshold monitoring highlights critical results that require immediate clinical intervention.", img: "/anomaly.svg" }
-];
 
   return (
     <div style={{ width: '100%' }}>
       {/* Hero Section */}
       <section className="section-full hero-section" id="home">
-  <div className="hero-content">
-    <h1>Healthcare AI,<br />Simplified for Modern Healthcare.</h1>
-    <p>Fast, accurate, and automated medical report understanding
-    powered by next-generation AI systems.</p>
-    <button className="btn-primary" onClick={() => onNavigate('upload')}>Get Started</button>
-  </div>
-</section>
+        <div className="hero-split">
+          <div className="hero-content">
+            <h1>Healthcare AI,<br />Simplified for Modern Healthcare.</h1>
+            <p>Fast, accurate, and automated medical report understanding
+            powered by next-generation AI systems.</p>
+            <button className="btn-primary" onClick={() => onNavigate('upload')}>Get Started</button>
+          </div>
 
-{/* Add your Features section here */}
-<section id="features">
-  {/* Your feature cards... */}
-</section>
-
-
-
-      <section className="section-full" id="features">
-  <h2 style={{ textAlign: 'center', marginBottom: '80px' }}>Features</h2>
-  
- 
-  
-  {/* Card 1 */}
-  <div className="feature-card">
-    <img src={tickmarkImg} className="feature-img" alt="Highlight Issues" />
-    <div className="feature-text">
-      <h3>Highlight potential Issues</h3>
-      <p>Automatically identifies and highlights potential issues in laboratory data that may require further investigation.</p>
-    </div>
-  </div>
-
-  {/* Card 2: Reversed */}
-  <div className="feature-card reverse">
-    <img src={domainImg} className="feature-img" alt="Domain Knowledge" />
-    <div className="feature-text">
-      <h3>Add Domain Knowledge</h3>
-      <p>Integrates extensive medical domain knowledge to provide contextually relevant insights and improve the accuracy of the analysis.</p>
-    </div>
-  </div>
-
-  {/* Card 3: Standard */}
-  <div className="feature-card">
-    <img src={summaryImg} className="feature-img" alt="Summarize Findings" />
-    <div className="feature-text">
-      <h3>Summarize Findings</h3>
-      <p>Provides concise, evidence-based summaries of key findings to facilitate rapid clinical decision-making.</p>
-    </div>
-  </div>
-</section>
-
-
-      {/* Interactive Pipeline Section */}
-      <section className="section-full" id="how-it-works" style={{ background: '#0f172a', padding: '80px 20px' }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '60px' }}>How It Works</h2>
-        <div className="pipeline-container">
-          <div className="pipeline-line"></div>
-          <div className="pulse-orb"></div>
-          {steps.map((step) => (
-            <div 
-              key={step.id} 
-              className={`node ${activeStep === step.id ? 'active' : ''}`}
-              onClick={() => setActiveStep(activeStep === step.id ? null : step.id)}
-              style={{ borderColor: step.id === 3 ? '#10b981' : '#3b82f6', color: step.id === 3 ? '#10b981' : 'white' }}
-            >
-              <h4 style={{ margin: 0 }}>{step.title}</h4>
-              <div className="node-summary" style={{ marginTop: '10px', fontSize: '13px', color: '#94a3b8' }}>
-                {step.summary}
+          <div className="hero-card glass-panel">
+            <div className="report-card-header">
+              <div className="report-card-icon">🏥</div>
+              <div>
+                <div className="report-card-title">LABORATORY REPORT</div>
+                <div className="report-card-subtitle">AI Report Analysis</div>
               </div>
             </div>
-          ))}
+            <div className="report-card-divider" />
+
+            <table className="report-table">
+              <thead>
+                <tr>
+                  <th>Test Name</th>
+                  <th>Result Value</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hemoglobin</td>
+                  <td>13.2 g/dL</td>
+                  <td><span className="badge badge-normal">Normal</span></td>
+                </tr>
+                <tr>
+                  <td>WBC Count</td>
+                  <td>4800 /µL</td>
+                  <td><span className="badge badge-normal">Normal</span></td>
+                </tr>
+                <tr>
+                  <td>Platelet Count</td>
+                  <td>145000 /µL</td>
+                  <td><span className="badge badge-low">Low</span></td>
+                </tr>
+                <tr>
+                  <td>Blood Sugar</td>
+                  <td>126 mg/dL</td>
+                  <td><span className="badge badge-high">High</span></td>
+                </tr>
+                <tr>
+                  <td>Cholesterol</td>
+                  <td>198 mg/dL</td>
+                  <td><span className="badge badge-normal">Normal</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div className="report-card-divider" />
+
+            <div className="ecg-section">
+              <div className="ecg-label">Live ECG Monitoring</div>
+              <div className="ecg-wave">
+                <svg viewBox="0 0 400 60" className="ecg-svg">
+                  <polyline
+                    className="ecg-line"
+                    points="0,30 20,30 30,30 40,30 50,30 60,30 70,30 80,30 90,30 100,30 110,30 120,30 130,30 140,30 150,30 160,30 170,30 180,30 190,30 200,30 210,30 220,30 225,10 230,50 235,30 240,30 250,30 260,30 270,30 280,30 290,30 300,30 310,30 320,30 330,30 340,30 350,30 360,30 370,30 380,30 390,30 400,30"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
-        
       </section>
 
       {/* Features Section */}
-      
+      <section id="features">
+        <h2 style={{ textAlign: 'center', marginBottom: '80px', fontSize: '2.5rem' }}>Features</h2>
 
+        <div className="feature-card">
+          <div className="feature-img feature-svg-wrap">
+            <svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="feature-svg">
+              <defs>
+                <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="rgba(239,68,68,0.2)" />
+                  <stop offset="100%" stopColor="rgba(239,68,68,0.05)" />
+                </linearGradient>
+                <linearGradient id="yellowGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="rgba(234,179,8,0.2)" />
+                  <stop offset="100%" stopColor="rgba(234,179,8,0.05)" />
+                </linearGradient>
+                <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="rgba(16,185,129,0.2)" />
+                  <stop offset="100%" stopColor="rgba(16,185,129,0.05)" />
+                </linearGradient>
+                <filter id="glowRed">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                </filter>
+                <filter id="glowYellow">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                </filter>
+              </defs>
 
+              <rect x="65" y="48" width="370" height="40" rx="10" fill="var(--badge-bg)" />
+              <text x="85" y="74" fontSize="13" fontWeight="800" fill="var(--badge-text)" letterSpacing="1.5">REPORT ANALYSIS</text>
+              <circle cx="400" cy="68" r="6" fill="rgba(16,185,129,0.5)" filter="url(#glowRed)">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="400" cy="68" r="3" fill="#10b981">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
+              </circle>
 
+              <rect x="65" y="100" width="370" height="36" rx="8" fill="url(#redGrad)" stroke="#ef4444" strokeWidth="0.5" filter="url(#glowRed)">
+                <animate attributeName="opacity" values="0.85;1;0.85" dur="1.5s" repeatCount="indefinite" />
+              </rect>
+              <rect x="78" y="108" width="8" height="20" rx="4" fill="#ef4444" />
+              <text x="96" y="123" fontSize="12" fill="#ef4444" fontWeight="700">Hemoglobin — 7.2 g/dL</text>
+              <rect x="330" y="108" width="95" height="20" rx="10" fill="rgba(239,68,68,0.2)" stroke="#ef4444" strokeWidth="0.5" />
+              <text x="346" y="122" fontSize="9" fill="#ef4444" fontWeight="800" letterSpacing="0.5">CRITICAL</text>
+
+              <rect x="65" y="144" width="370" height="36" rx="8" fill="url(#redGrad)" stroke="#ef4444" strokeWidth="0.5" filter="url(#glowRed)">
+                <animate attributeName="opacity" values="0.85;1;0.85" dur="1.8s" repeatCount="indefinite" />
+              </rect>
+              <rect x="78" y="152" width="8" height="20" rx="4" fill="#ef4444" />
+              <text x="96" y="167" fontSize="12" fill="#ef4444" fontWeight="700">WBC Count — 14,200 /µL</text>
+              <rect x="330" y="152" width="95" height="20" rx="10" fill="rgba(239,68,68,0.2)" stroke="#ef4444" strokeWidth="0.5" />
+              <text x="342" y="166" fontSize="9" fill="#ef4444" fontWeight="800" letterSpacing="0.5">ELEVATED</text>
+
+              <rect x="65" y="188" width="370" height="36" rx="8" fill="url(#yellowGrad)" stroke="#eab308" strokeWidth="0.5" filter="url(#glowYellow)" />
+              <rect x="78" y="196" width="8" height="20" rx="4" fill="#eab308" />
+              <text x="96" y="211" fontSize="12" fill="#eab308" fontWeight="700">Platelet Count — 95,000 /µL</text>
+              <rect x="330" y="196" width="95" height="20" rx="10" fill="rgba(234,179,8,0.2)" stroke="#eab308" strokeWidth="0.5" />
+              <text x="340" y="210" fontSize="9" fill="#eab308" fontWeight="800" letterSpacing="0.5">BORDERLINE</text>
+
+              <rect x="65" y="232" width="370" height="36" rx="8" fill="url(#greenGrad)" stroke="#10b981" strokeWidth="0.5" />
+              <rect x="78" y="240" width="8" height="20" rx="4" fill="#10b981" />
+              <text x="96" y="255" fontSize="12" fill="#10b981" fontWeight="700">Cholesterol — 180 mg/dL</text>
+              <rect x="330" y="240" width="85" height="20" rx="10" fill="rgba(16,185,129,0.15)" stroke="#10b981" strokeWidth="0.5" />
+              <text x="347" y="254" fontSize="9" fill="#10b981" fontWeight="800" letterSpacing="0.5">NORMAL</text>
+
+              <circle cx="435" cy="35" r="16" fill="var(--bg-card)" stroke="var(--border-light)" strokeWidth="1" />
+              <text x="435" y="40" fontSize="14" textAnchor="middle" fill="var(--text)" fontWeight="800">!</text>
+            </svg>
+          </div>
+          <div className="feature-text">
+            <h3>Highlight potential Issues</h3>
+            <p>Automatically identifies and highlights potential issues in laboratory data that may require further investigation.</p>
+          </div>
+        </div>
+
+        <div className="feature-card reverse">
+          <div className="feature-img feature-svg-wrap">
+            <svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="feature-svg">
+              <defs>
+                <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="rgba(59,130,246,0.2)" />
+                  <stop offset="100%" stopColor="rgba(59,130,246,0.05)" />
+                </linearGradient>
+                <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="rgba(139,92,246,0.2)" />
+                  <stop offset="100%" stopColor="rgba(139,92,246,0.05)" />
+                </linearGradient>
+              </defs>
+
+              <circle cx="140" cy="120" r="50" fill="url(#blueGrad)" stroke="rgba(59,130,246,0.35)" strokeWidth="1" />
+              <text x="140" y="126" fontSize="26" textAnchor="middle" fill="#3b82f6">📚</text>
+              <text x="140" y="195" fontSize="12" textAnchor="middle" fill="var(--text-muted)" fontWeight="600">Medical</text>
+              <text x="140" y="211" fontSize="12" textAnchor="middle" fill="var(--text-muted)" fontWeight="600">Textbooks</text>
+
+              <circle cx="250" cy="90" r="50" fill="url(#purpleGrad)" stroke="rgba(139,92,246,0.35)" strokeWidth="1" />
+              <text x="250" y="96" fontSize="26" textAnchor="middle" fill="#8b5cf6">🧬</text>
+              <text x="250" y="165" fontSize="12" textAnchor="middle" fill="var(--text-muted)" fontWeight="600">Clinical</text>
+              <text x="250" y="181" fontSize="12" textAnchor="middle" fill="var(--text-muted)" fontWeight="600">Research</text>
+
+              <circle cx="360" cy="120" r="50" fill="url(#blueGrad)" stroke="rgba(59,130,246,0.35)" strokeWidth="1" />
+              <text x="360" y="126" fontSize="26" textAnchor="middle" fill="#3b82f6">📋</text>
+              <text x="360" y="195" fontSize="12" textAnchor="middle" fill="var(--text-muted)" fontWeight="600">Lab</text>
+              <text x="360" y="211" fontSize="12" textAnchor="middle" fill="var(--text-muted)" fontWeight="600">Guidelines</text>
+
+              <circle cx="250" cy="255" r="36" fill="var(--badge-bg)" stroke="var(--badge-text)" strokeWidth="0.8" />
+              <text x="250" y="262" fontSize="30" textAnchor="middle" fill="var(--badge-text)">🧠</text>
+
+              <line x1="180" y1="108" x2="210" y2="98" stroke="var(--text-muted)" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.5" />
+              <line x1="290" y1="98" x2="320" y2="108" stroke="var(--text-muted)" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.5" />
+              <line x1="250" y1="140" x2="250" y2="219" stroke="var(--text-muted)" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.5" />
+            </svg>
+          </div>
+          <div className="feature-text">
+            <h3>Add Domain Knowledge</h3>
+            <p>Integrates extensive medical domain knowledge to provide contextually relevant insights and improve the accuracy of the analysis.</p>
+          </div>
+        </div>
+
+        <div className="feature-card">
+          <div className="feature-img feature-svg-wrap">
+            <svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="feature-svg">
+              <defs>
+                <linearGradient id="cyanGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="rgba(6,182,212,0.2)" />
+                  <stop offset="100%" stopColor="rgba(6,182,212,0.05)" />
+                </linearGradient>
+                <linearGradient id="emeraldGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="rgba(16,185,129,0.2)" />
+                  <stop offset="100%" stopColor="rgba(16,185,129,0.05)" />
+                </linearGradient>
+                <filter id="glowCyan">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                </filter>
+              </defs>
+
+              <rect x="50" y="30" width="175" height="240" rx="14" fill="var(--bg-card)" stroke="var(--border-light)" strokeWidth="1" />
+              <rect x="65" y="48" width="145" height="6" rx="3" fill="var(--text-muted)" opacity="0.25" />
+              <rect x="65" y="62" width="100" height="4" rx="2" fill="var(--text-muted)" opacity="0.15" />
+
+              <rect x="65" y="85" width="145" height="22" rx="6" fill="rgba(239,68,68,0.1)" />
+              <text x="73" y="100" fontSize="10" fill="#ef4444" fontWeight="600">▌Hemoglobin · Low</text>
+
+              <rect x="65" y="115" width="145" height="22" rx="6" fill="rgba(234,179,8,0.1)" />
+              <text x="73" y="130" fontSize="10" fill="#eab308" fontWeight="600">▌Platelets · Borderline</text>
+
+              <rect x="65" y="145" width="145" height="22" rx="6" fill="rgba(16,185,129,0.1)" />
+              <text x="73" y="160" fontSize="10" fill="#10b981" fontWeight="600">▌Cholesterol · Normal</text>
+
+              <rect x="65" y="175" width="145" height="22" rx="6" fill="rgba(239,68,68,0.1)" />
+              <text x="73" y="190" fontSize="10" fill="#ef4444" fontWeight="600">▌WBC · Elevated</text>
+
+              <rect x="65" y="205" width="145" height="22" rx="6" fill="rgba(16,185,129,0.1)" />
+              <text x="73" y="220" fontSize="10" fill="#10b981" fontWeight="600">▌Creatinine · Normal</text>
+
+              <rect x="65" y="240" width="145" height="20" rx="6" fill="var(--badge-bg)" />
+              <text x="137" y="254" fontSize="10" textAnchor="middle" fill="var(--badge-text)" fontWeight="700">+ 3 more</text>
+
+              <line x1="245" y1="40" x2="245" y2="270" stroke="var(--border-light)" strokeWidth="1.5" strokeDasharray="6 5" />
+
+              <rect x="275" y="40" width="185" height="44" rx="10" fill="url(#cyanGrad)" stroke="rgba(6,182,212,0.3)" strokeWidth="0.8" filter="url(#glowCyan)" />
+              <text x="290" y="58" fontSize="11" fill="#06b6d4" fontWeight="800" letterSpacing="0.5">AI SUMMARY</text>
+              <text x="290" y="73" fontSize="9" fill="var(--text-muted)">Generated by LLaMA 3 · 70B</text>
+
+              <rect x="275" y="96" width="185" height="40" rx="8" fill="var(--bg-card)" stroke="var(--border)" strokeWidth="0.5" />
+              <circle cx="292" cy="116" r="4" fill="#ef4444">
+                <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite" />
+              </circle>
+              <text x="304" y="112" fontSize="9.5" fill="var(--text)" fontWeight="600">2 critical flags detected</text>
+              <text x="304" y="126" fontSize="9" fill="var(--text-muted)">Immediate attention required</text>
+
+              <rect x="275" y="146" width="185" height="40" rx="8" fill="var(--bg-card)" stroke="var(--border)" strokeWidth="0.5" />
+              <circle cx="292" cy="166" r="4" fill="#eab308" />
+              <text x="304" y="162" fontSize="9.5" fill="var(--text)" fontWeight="600">1 borderline result</text>
+              <text x="304" y="176" fontSize="9" fill="var(--text-muted)">Follow-up recommended</text>
+
+              <rect x="275" y="196" width="185" height="40" rx="8" fill="var(--bg-card)" stroke="var(--border)" strokeWidth="0.5" />
+              <circle cx="292" cy="216" r="4" fill="#10b981" />
+              <text x="304" y="212" fontSize="9.5" fill="var(--text)" fontWeight="600">2 normal results</text>
+              <text x="304" y="226" fontSize="9" fill="var(--text-muted)">Within reference range</text>
+
+              <rect x="275" y="253" width="185" height="28" rx="8" fill="url(#emeraldGrad)" stroke="rgba(16,185,129,0.3)" strokeWidth="0.8" />
+              <text x="367" y="272" fontSize="11" textAnchor="middle" fill="#10b981" fontWeight="800" letterSpacing="0.5">DOWNLOAD REPORT</text>
+            </svg>
+          </div>
+          <div className="feature-text">
+            <h3>Summarize Findings</h3>
+            <p>Provides concise, evidence-based summaries of key findings to facilitate rapid clinical decision-making.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section id="how-it-works">
+        <h2>How It Works</h2>
+        <p>From upload to insight — our AI pipeline in five simple steps.</p>
+        <div className="pipeline-container">
+          {steps.map((step, idx) => (
+            <React.Fragment key={step.id}>
+              <div
+                className={`step-card ${activeStep === step.id ? 'active' : ''}`}
+                onClick={() => setActiveStep(activeStep === step.id ? null : step.id)}
+              >
+                <div className="step-number">{String(step.id + 1).padStart(2, '0')}</div>
+                <h4>{step.title}</h4>
+                <div className="step-summary">{step.summary}</div>
+              </div>
+              {idx < steps.length - 1 && <span className="step-arrow">→</span>}
+            </React.Fragment>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

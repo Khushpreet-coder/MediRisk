@@ -1,10 +1,13 @@
-// src/components/Upload.jsx
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 export default function Upload({ onUploadSuccess }) {
   const [file, setFile] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const fileInputRef = useRef(null);
 
+  const handleIconClick = () => {
+    fileInputRef.current?.click();
+  };
   
   const handleInferenceSubmission = async (e) => {
     e.preventDefault();
@@ -38,20 +41,35 @@ export default function Upload({ onUploadSuccess }) {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: '180px' }}>
-      <div className="container glass-panel" style={{ width: '550px', padding: '40px', textAlign: 'center' }}>
-        <h1 style={{ marginBottom: '15px' }}>Ingest Health Profiles</h1>
-        <p style={{ color: '#94a3b8', marginBottom: '30px' }}>Drop a clinical matrix payload sequence down below (PDF/Image formats).</p>
+    <div className="upload-wrapper">
+      <div className="upload-card glass-panel">
+        <h1 style={{ marginBottom: '28px' }}>Ingest Health Profiles</h1>
         
-        <form onSubmit={handleInferenceSubmission} style={{ border: '2px dashed rgba(255,255,255,0.15)', padding: '40px 20px', borderRadius: '12px' }}>
-          <input 
-            type="file" 
-            accept="image/*,application/pdf"
-            onChange={(e) => setFile(e.target.files[0])}
-            disabled={isLoading}
-            style={{ display: 'block', margin: '0 auto 25px auto', color: '#94a3b8' }}
-          />
-          <button type="submit" style={{ width: '100%' }} disabled={isLoading || !file}>
+        <form onSubmit={handleInferenceSubmission}>
+          <div className="upload-dropzone">
+            <input 
+              type="file" 
+              accept="image/*,application/pdf"
+              onChange={(e) => setFile(e.target.files[0])}
+              disabled={isLoading}
+              className="upload-input"
+              id="file-input"
+              ref={fileInputRef}
+            />
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '6px' }}>Drag & drop or click to upload your medical report</p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.78rem', marginBottom: '20px' }}>Supports PDF, PNG, JPG — up to 50MB</p>
+            <div className="upload-icon-container" onClick={handleIconClick} style={{ cursor: 'pointer' }}>
+              <svg viewBox="0 0 48 48" fill="none" className="upload-icon-svg" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="28" width="28" height="14" rx="4" stroke="currentColor" strokeWidth="2" fill="none" />
+                <path d="M24 8 L24 30 M16 18 L24 8 L32 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              </svg>
+            </div>
+            <label htmlFor="file-input" className="upload-label" style={{ cursor: 'pointer' }}>
+              {file ? file.name : "Choose File"}
+            </label>
+          </div>
+
+          <button type="submit" className="btn-primary upload-submit" disabled={isLoading || !file} style={{ marginTop: '20px' }}>
             {isLoading ? "Running Neural Parsing Pipeline..." : "Start Analysis"}
           </button>
         </form>
